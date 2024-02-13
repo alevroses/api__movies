@@ -4,7 +4,8 @@
   "description": "This is a basic project made with JavaScript (fetch) to practice the consumption of an API (GET / POST / DELETE).",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d src"
   },
   "keywords": [],
   "author": "",
