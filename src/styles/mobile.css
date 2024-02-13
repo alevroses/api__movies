@@ -51,9 +51,10 @@ body {
 
 .section {
   display: grid;
-  grid-template-columns:
+  /* grid-template-columns:
     minmax(70px, 1fr)
-    auto minmax(70px, 1fr);
+    auto minmax(70px, 1fr); */
+  grid-template-columns: 25% 55% 20%;
   justify-items: center;
 
   align-items: center;
