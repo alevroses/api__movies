@@ -46,7 +46,7 @@ body {
   display: grid;
   grid-template-rows: 1fr 0.7fr;
   /* justify-content: center; */
-  padding: 0 15px 0 15px;
+  /* padding: 0 15px 0 15px; */
 }
 
 .section {
@@ -56,6 +56,7 @@ body {
   align-items: center;
 
   height: 44px;
+  padding: 0 15px;
 
   border-bottom: 1px solid var(--bg-blue-60);
 }
@@ -124,6 +125,17 @@ body {
   text-decoration: none;
   color: var(--bg-blue-10);
   font-size: 14px;
+}
+
+.dropdowm {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dropdowm__icon {
+  width: 8.7px;
+  height: 14px;
 }
 
 /* .poppins-light {
