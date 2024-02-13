@@ -18,30 +18,52 @@
     <link
       rel="stylesheet"
       href="./styles/mobile.css" />
+
+    <!-- Google Fonts 2 -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap"
+      rel="stylesheet" />
     <title>Look Movie</title>
   </head>
   <body>
     <header class="header">
       <nav class="nav">
         <section class="section">
-          <img
-            class="section__logo"
-            src=""
-            alt="Look Movie Logo" />
-          <a class="section__link" href=""
-            >MOVIES</a
-          >
-          <a class="section__link" href=""
-            >TV SHOWS</a
-          >
-          <img
-            class="section__icon"
-            src=""
-            alt="Search Icon" />
-          <img
-            class="section__icon"
-            src=""
-            alt="Login Icon" />
+          <a class="section__link-logo" href="">
+            <img
+              class="section__logo"
+              src="./img/lookmovie-logo.png"
+              alt="Look Movie Logo" />
+          </a>
+          <div class="section__links">
+            <a
+              class="section__link section__link--movies"
+              href=""
+              >MOVIES</a
+            >
+            <a
+              class="section__link section__link--shows"
+              href=""
+              >TV SHOWS</a
+            >
+          </div>
+          <div class="section__icons">
+            <img
+              class="section__icon section__icon--search"
+              src="./img/search-icon.svg"
+              alt="Search Icon" />
+            <img
+              class="section__icon section__icon--login"
+              src="./img/user-icon.svg"
+              alt="Login Icon" />
+          </div>
         </section>
         <section class="section-menu">
           <a class="menu__link" href="">TRENDING</a>

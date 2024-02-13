@@ -2,9 +2,16 @@
   --bg-blue-100: #020617;
   --bg-blue-80: #0f172a;
   --bg-blue-60: #1e293b;
-  --bg-blue-40: #334155;
+  --bg-blue-50: #334155;
+  --bg-blue-40: #475569;
+  --bg-blue-30: #64748b;
+  --bg-blue-20: #94a3b8;
+  --bg-blue-10: #cbd5e1;
 }
-
+/* 
+// <uniquifier>: Use a uniquifier for the class name
+// <weight>: Use a value from 200 to 800 
+*/
 * {
   padding: 0;
   margin: 0;
@@ -14,7 +21,12 @@
 body {
   width: 100vw;
   height: 100vh;
-  font-family: "Poppins", sans-serif;
+
+  font-family: "Dosis", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  
   background: rgb(2, 6, 23);
   background: linear-gradient(
     180deg,
@@ -23,8 +35,57 @@ body {
   );
 }
 
-.section-menu {
-  background-color: var(--bg-blue-40);
+.header {
+  width: 100vw;
+  height: 72px;
+  background-color: var(--bg-blue-80);
+}
+
+.nav {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  padding: 0 15px 0 15px;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+
+  align-items: center;
+
+  height: 40px;
+}
+
+.section__link-logo {
+  width: 72px;
+  max-width: 120px;
+  height: 29px;
+  /* max-width: 30px; */
+}
+
+.section__logo {
+  width: 100%;
+  height: 100%;
+}
+
+.section__links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.section__links .section__link {
+  text-decoration: none;
+  color: var(--bg-blue-10);
+
+  font-size: 16px;
+  text-transform: uppercase; 
+}
+
+.section__icons {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
 }
 
 /* .poppins-light {
