@@ -1,0 +1,47 @@
+:root {
+  --bg-blue-100: #020617;
+  --bg-blue-80: #0f172a;
+  --bg-blue-60: #1e293b;
+  --bg-blue-40: #334155;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: rgb(2, 6, 23);
+  background: linear-gradient(
+    180deg,
+    rgba(2, 6, 23, 1) 44%,
+    rgba(30, 41, 59, 1) 100%
+  );
+}
+
+.section-menu {
+  background-color: var(--bg-blue-40);
+}
+
+/* .poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+ */
