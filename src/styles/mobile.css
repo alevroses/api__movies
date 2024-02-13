@@ -5,6 +5,12 @@
   --bg-blue-40: #334155;
 }
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   width: 100vw;
   height: 100vh;
