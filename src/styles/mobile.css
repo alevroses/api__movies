@@ -21,20 +21,23 @@
 
 body {
   width: 100vw;
-  height: 100vh;
+  height: auto;
 
   font-family: "Dosis", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 
-  background: rgb(2, 6, 23);
+  /* background: var(--bg-blue-100);
   background: linear-gradient(
     180deg,
-    rgba(2, 6, 23, 1) 44%,
-    rgba(30, 41, 59, 1) 100%
-  );
+    var(--bg-blue-100) 44%,
+    var(--bg-blue-60) 100%
+  ); */
+  background-color: var(--bg-blue-100);
 }
+
+/* HEADER ----------------------- */
 
 .header {
   width: 100vw;
@@ -51,9 +54,6 @@ body {
 
 .section {
   display: grid;
-  /* grid-template-columns:
-    minmax(70px, 1fr)
-    auto minmax(70px, 1fr); */
   grid-template-columns: 25% 55% 20%;
   justify-items: center;
 
@@ -134,3 +134,100 @@ body {
   width: 8.7px;
   height: 14px;
 }
+
+/* MAIN ----------------------- */
+
+.container {
+  width: 100vw;
+  /* max-width: 1000px; */
+  height: auto;
+  display: grid;
+  justify-items: center;
+}
+
+.container__div {
+  width: 90%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.banner {
+  /* width: 200px;
+  height: 200px;
+   */
+  /* position: relative; */
+  overflow: hidden;
+  margin: 15px 0 0;
+  /* padding: 15px 0 0; */
+}
+
+.banner .banner__movie {
+  width: 100%;
+  max-width: 538px;
+  height: 100%;
+
+  transform: scale(1.2);
+  /* object-fit: cover; */
+}
+
+.orientation {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  height: auto;
+  top: 50px;
+  padding: 0 15px;
+}
+
+.left,
+.right {
+  display: flex;
+  background-color: var(--bg-blue-80);
+  opacity: 0.9;
+  border-radius: 4px;
+}
+
+.details {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+  width: 100%;
+  height: 60%;
+  color: var(--bg-blue-10);
+  text-shadow: 1px 1px 1px var(--bg-blue-100);
+  /* text-shadow: 1px 1px 1px black,
+    -1px -1px 1px black, 1px -1px 1px black,
+    -1px 1px 1px black; */
+  /* -webkit-text-stroke: 1px black; */
+  padding: 15px;
+}
+
+.hidden {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  background-color: var(--bg-blue-60);
+  bottom: 0;
+
+  /* background: rgb(20, 29, 46);
+  background: linear-gradient(
+    180deg,
+    rgba(20, 29, 46, 1) 0%,
+    rgba(30, 41, 59, 1) 100%
+  ); */
+  background-color: var(--bg-blue-100);
+}
+
+/* 
+a: 290 max 538
+h: 350.891 max 614
+
+#141d2e
+#141d2f
+#161f30
+#1e293b
+*/
