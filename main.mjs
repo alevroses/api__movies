@@ -9,6 +9,8 @@ const showTrending = async () => {
   console.log(results);
 
   //container.innerHTML = "";
+  let counter = 0;
+
   results.map(movie => {
     const section =
       document.createElement("section");
@@ -40,6 +42,10 @@ const showTrending = async () => {
     const divHidden = document.createElement("div");
 
     /* movieId.push(movie.id); */
+
+    counter += 1;
+
+    section.setAttribute("id", `item${counter}`);
 
     section.classList.add("container__div");
     figure.classList.add("banner");
@@ -75,6 +81,20 @@ const showTrending = async () => {
     imgRightIcon.setAttribute(
       "src",
       "./img/chevron-right-icon.svg"
+    );
+
+    if (counter === 20) {
+      counter = 0;
+
+      aRight.setAttribute(
+        "href",
+        `#item${counter + 1}`
+      );
+    }
+
+    aRight.setAttribute(
+      "href",
+      `#item${counter + 1}`
     );
 
     figure.append(img);
