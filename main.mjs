@@ -8,7 +8,7 @@ const showTrending = async () => {
   const results = data.results;
   console.log(results);
 
-  //container.innerHTML = "";
+  container.innerHTML = "";
   let increase = 0;
   let decrease = 21;
 
