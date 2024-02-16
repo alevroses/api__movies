@@ -145,6 +145,8 @@ body {
   height: auto;
   display: grid;
   justify-items: center;
+  /* position: relative; */
+  /* overflow: hidden; */
 }
 
 .container__div {
