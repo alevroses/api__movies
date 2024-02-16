@@ -9,7 +9,8 @@ const showTrending = async () => {
   console.log(results);
 
   //container.innerHTML = "";
-  let counter = 0;
+  let increase = 0;
+  let decrease = 21;
 
   results.map(movie => {
     const section =
@@ -43,9 +44,10 @@ const showTrending = async () => {
 
     /* movieId.push(movie.id); */
 
-    counter += 1;
+    increase += 1;
+    decrease -= 1;
 
-    section.setAttribute("id", `item${counter}`);
+    section.setAttribute("id", `item${increase}`);
 
     section.classList.add("container__div");
     figure.classList.add("banner");
@@ -83,19 +85,31 @@ const showTrending = async () => {
       "./img/chevron-right-icon.svg"
     );
 
-    if (counter === 20) {
-      counter = 0;
-
-      aRight.setAttribute(
+    if (decrease === 20) {
+      aLeft.setAttribute(
         "href",
-        `#item${counter + 1}`
+        `#item${decrease}`
+      );
+    } else {
+      aLeft.setAttribute(
+        "href",
+        `#item${increase - 1}`
       );
     }
 
-    aRight.setAttribute(
-      "href",
-      `#item${counter + 1}`
-    );
+    if (increase === 20) {
+      increase = 0;
+
+      aRight.setAttribute(
+        "href",
+        `#item${increase + 1}`
+      );
+    } else {
+      aRight.setAttribute(
+        "href",
+        `#item${increase + 1}`
+      );
+    }
 
     figure.append(img);
     section.append(figure);
