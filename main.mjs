@@ -93,9 +93,12 @@ const showTrending = async () => {
           `# ${details.genres[key].name} `.toUpperCase();
       }
 
-      rating.textContent = `${details.vote_average}`;
+      const voteAverage =
+        details.vote_average.toFixed(1);
+      rating.textContent = "🔥" + voteAverage;
+      console.log(typeof details.vote_average);
       quality.textContent = "FHD";
-      runtime.textContent = `${details.runtime}`;
+      runtime.textContent = `⏱ ${details.runtime}`;
     })();
 
     divDetailsOthers.append(rating);
