@@ -1,6 +1,4 @@
-const figure = document.querySelector(".banner");
-/* const bannerMovie = document.querySelector(
-  ".banner__movie"
-); */
+const container =
+  document.querySelector(".container");
 
-export { figure };
+export { container };
