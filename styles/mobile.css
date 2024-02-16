@@ -302,9 +302,9 @@ body {
 
 .main {
   width: 100vw;
-  height: 350px;
+  height: auto;
   display: grid;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1fr;
   justify-items: center;
 }
 
@@ -328,15 +328,10 @@ body {
   grid-template-rows: 130px;
   justify-self: center;
   position: relative;
-  /* background-color: var(--bg-blue-80);
-  box-shadow: inset 0 0 5px 2px var(--bg-blue-100);
-  opacity: 0.7; */
 }
 
-.main .details .details__figure {
-  /* width: 33%;
-  height: 100%; */
-}
+/* .main .details .details__figure {
+} */
 
 .details__figure img {
   width: 100%;
@@ -381,7 +376,29 @@ body {
   justify-self: center;
   padding: 15px;
   color: var(--bg-blue-10);
-  /* background-color: var(--bg-blue-80);
-  box-shadow: inset 0 0 5px 2px var(--bg-blue-100);
-  opacity: 0.7; */
+  position: relative;
+}
+
+/* Probando */
+.main__section {
+  display: block;
+}
+
+/* description */
+.disabled {
+  display: none;
+}
+
+.hide-btn {
+  display: none;
+  width: 50px;
+  top: 232px;
+  bottom: 0;
+  position: absolute;
+}
+
+.description__cast {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+  margin: 0 0 20px 0;
 }
