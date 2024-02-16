@@ -160,6 +160,7 @@ body {
   overflow: hidden;
   margin: 15px 0 0;
   /* padding: 15px 0 0; */
+  border: 1px solid var(--bg-blue-100);
 }
 
 .banner .banner__movie {
