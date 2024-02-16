@@ -26,6 +26,11 @@ const showTrending = async () => {
 
     const divDetails =
       document.createElement("div");
+    const divDetailsOthers =
+      document.createElement("div");
+    const rating = document.createElement("div");
+    const quality = document.createElement("div");
+    const runtime = document.createElement("div");
     const h1 = document.createElement("h1");
     const p = document.createElement("p");
 
@@ -42,6 +47,12 @@ const showTrending = async () => {
     aRight.classList.add("right");
 
     divDetails.classList.add("details");
+    divDetailsOthers.classList.add(
+      "details__others"
+    );
+    rating.classList.add("others");
+    quality.classList.add("others");
+    runtime.classList.add("others");
     h1.classList.add("details__title");
     p.classList.add("details__genre");
 
@@ -72,6 +83,7 @@ const showTrending = async () => {
 
     (async () => {
       const details = await getDetails(movieId);
+      console.log("viendo", details);
 
       h1.textContent =
         `${movie.title} ${movie.release_date}`.toUpperCase();
@@ -80,11 +92,20 @@ const showTrending = async () => {
         p.textContent +=
           `# ${details.genres[key].name} `.toUpperCase();
       }
+
+      rating.textContent = `${details.vote_average}`;
+      quality.textContent = "FHD";
+      runtime.textContent = `${details.runtime}`;
     })();
 
+    divDetailsOthers.append(rating);
+    divDetailsOthers.append(quality);
+    divDetailsOthers.append(runtime);
+    divDetails.append(divDetailsOthers);
     divDetails.append(h1);
     divDetails.append(p);
     section.append(divDetails);
+    section.append(divHidden);
   });
 };
 
