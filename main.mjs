@@ -4,11 +4,11 @@ import { getDetails } from "./API/get-details.mjs";
 
 const showTrending = async () => {
   const data = await getTrending();
-  const movieId = [];
 
   const results = data.results;
   console.log(results);
 
+  //container.innerHTML = "";
   results.map(movie => {
     const section =
       document.createElement("section");
@@ -28,15 +28,18 @@ const showTrending = async () => {
       document.createElement("div");
     const divDetailsOthers =
       document.createElement("div");
-    const rating = document.createElement("div");
-    const quality = document.createElement("div");
-    const runtime = document.createElement("div");
+    const rating = document.createElement("p");
+    const quality = document.createElement("p");
+    const runtime = document.createElement("p");
     const h1 = document.createElement("h1");
     const p = document.createElement("p");
+    const overview = document.createElement("p");
+    const buttonWatch =
+      document.createElement("button");
 
     const divHidden = document.createElement("div");
 
-    movieId.push(movie.id);
+    /* movieId.push(movie.id); */
 
     section.classList.add("container__div");
     figure.classList.add("banner");
@@ -51,10 +54,12 @@ const showTrending = async () => {
       "details__others"
     );
     rating.classList.add("others");
-    quality.classList.add("others");
+    quality.classList.add("others", "highlight");
     runtime.classList.add("others");
     h1.classList.add("details__title");
     p.classList.add("details__genre");
+    overview.classList.add("details__overview");
+    buttonWatch.classList.add("watch");
 
     divHidden.classList.add("hidden");
 
@@ -82,32 +87,42 @@ const showTrending = async () => {
     section.append(divArrows);
 
     (async () => {
-      const details = await getDetails(movieId);
+      const details = await getDetails(movie.id);
+      /* console.log("idxd", movieId); */
       console.log("viendo", details);
 
+      const date = movie.release_date.split("-");
+      const year = date[0];
+
       h1.textContent =
-        `${movie.title} ${movie.release_date}`.toUpperCase();
+        `${movie.title} (${year})`.toUpperCase();
+
+      const voteAverage =
+        details.vote_average.toFixed(1);
+      rating.textContent = `🔥 ${voteAverage}`;
+      quality.textContent = "FHD";
+      runtime.textContent = `⏱ ${details.runtime}`;
 
       for (const key in details.genres) {
         p.textContent +=
           `# ${details.genres[key].name} `.toUpperCase();
-      }
 
-      const voteAverage =
-        details.vote_average.toFixed(1);
-      rating.textContent = "🔥" + voteAverage;
-      console.log(typeof details.vote_average);
-      quality.textContent = "FHD";
-      runtime.textContent = `⏱ ${details.runtime}`;
+        overview.textContent = `${details.overview}`;
+      }
     })();
 
+    buttonWatch.textContent = "Watch now";
+
+    divDetails.append(h1);
     divDetailsOthers.append(rating);
     divDetailsOthers.append(quality);
     divDetailsOthers.append(runtime);
     divDetails.append(divDetailsOthers);
-    divDetails.append(h1);
     divDetails.append(p);
+    divDetails.append(overview);
+
     section.append(divDetails);
+    section.append(buttonWatch);
     section.append(divHidden);
   });
 };
