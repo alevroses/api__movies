@@ -6,7 +6,6 @@ const showTrending = async () => {
   const data = await getTrending();
 
   const results = data.results;
-  console.log(results);
 
   container.innerHTML = "";
   let increase = 0;
@@ -120,8 +119,6 @@ const showTrending = async () => {
 
     (async () => {
       const details = await getDetails(movie.id);
-      /* console.log("idxd", movieId); */
-      console.log("viendo", details);
 
       const date = movie.release_date.split("-");
       const year = date[0];
