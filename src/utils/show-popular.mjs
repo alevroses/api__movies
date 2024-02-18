@@ -47,15 +47,18 @@ const showPopular = async () => {
     divMore.classList.add("details__more");
 
     btnShow.classList.add(
-      "button-description btn-show"
+      "button-description",
+      "btn-show"
     );
     description.classList.add(
-      "description disabled"
+      "description",
+      "disabled"
     );
     cast.classList.add("description__cast");
     overview.classList.add("description__overview");
     btnHide.classList.add(
-      "button-description hide-btn"
+      "button-description",
+      "hide-btn"
     );
   });
 };
