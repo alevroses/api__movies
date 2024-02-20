@@ -1,9 +1,6 @@
-const container =
-  document.querySelector(".container");
+const container = document.querySelector(".container");
 
-const main = document.querySelector(
-  ".main__section"
-);
+const main = document.querySelector(".main");
 // Create Elements
 
 export { container, main };

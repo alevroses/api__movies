@@ -8,8 +8,8 @@ import {
 import { showPopular } from "./utils/show-popular.mjs";
 
 showTrending();
+showPopular();
 
 btnShow.addEventListener("click", showContent);
 btnHide.addEventListener("click", hideContent);
 
-showPopular();
