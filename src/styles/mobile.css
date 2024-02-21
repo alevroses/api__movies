@@ -367,12 +367,18 @@ body {
   border-radius: 10px 0 0 10px;
   position: absolute;
 
+
+}
+
+.btn-show {
   right: 20px;
-  top: 100px;
+  /* top: 100px; */
+  bottom: 10px;
 }
 
 .description {
   width: 100%;
+  /* height: auto; */
   justify-self: center;
   padding: 15px;
   color: var(--bg-blue-10);
@@ -392,8 +398,8 @@ body {
 .hide-btn {
   display: none;
   width: 50px;
-  top: 232px;
-  bottom: 0;
+  right: 20px;
+  bottom: 10px;
   position: absolute;
 }
 
