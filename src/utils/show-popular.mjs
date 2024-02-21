@@ -2,10 +2,13 @@ import { getPopular } from "../API/get-popular.mjs";
 import { main } from "../nodes.mjs";
 import { getDetails } from "../API/get-details.mjs";
 import { getCast } from "../API/get-cast.mjs";
+import { showContent, hideContent } from "./show-hide-details.mjs";
 
 const showPopular = async () => {
   const data = await getPopular();
   console.log(data);
+
+  /* main.innerHTML = ""; */
 
   data.results.map((movie) => {
     const section = document.createElement("section");
@@ -28,6 +31,7 @@ const showPopular = async () => {
     const description = document.createElement("section");
     const cast = document.createElement("p");
     const spanCast = document.createElement("span");
+    const spanCastNames = document.createElement("span");
     const overview = document.createElement("p");
     const btnHide = document.createElement("button");
 
@@ -65,7 +69,6 @@ const showPopular = async () => {
     (async () => {
       const details = await getDetails(movie.id);
       const actors = await getCast(movie.id);
-      console.log("cast", actors);
 
       details.genres.map((genre) => {
         spanGenres.textContent += `${genre.name} `;
@@ -73,17 +76,20 @@ const showPopular = async () => {
 
       genres.append(spanGenres);
 
-      actors.cast.map((name) => {
-        spanCast.textContent = "Cast: ";
-        cast.textContent += `${name.name}, `;
+      spanCast.textContent = "Cast: ";
+
+      console.log("length", actors.cast.length);
+      actors.cast.map((name, index) => {
+        index < 5 ? (spanCastNames.textContent += `${name.name}, `) : null;
       });
+
+      cast.append(spanCast, spanCastNames);
     })();
 
     /* console.log(movie); */
 
     btnShow.textContent = "+ Description";
 
-    cast.append(spanCast);
     overview.textContent = movie.overview;
     btnHide.textContent = "- Hide";
 
@@ -94,6 +100,9 @@ const showPopular = async () => {
     description.append(cast, overview, btnHide);
     section.append(divDetails, btnShow, description);
     main.append(section);
+
+    btnShow.addEventListener("click", showContent);
+    btnHide.addEventListener("click", hideContent);
   });
 };
 

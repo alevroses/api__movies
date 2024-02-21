@@ -310,9 +310,9 @@ body {
 
 .main__section {
   width: 90%;
-  height: auto;
+  /* height: auto; */
   display: grid;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 130px 2fr;
 
   position: relative;
   background-color: var(--bg-blue-80);
@@ -322,7 +322,7 @@ body {
 
 .main .details-div {
   width: 100%;
-  height: auto;
+  /* height: auto; */
   display: grid;
   grid-template-columns: 0.8fr 2fr;
   grid-template-rows: 130px;
