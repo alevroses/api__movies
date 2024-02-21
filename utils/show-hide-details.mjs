@@ -1,49 +1,32 @@
-const btnShow = document.querySelector(".btn-show");
-const btnHide = document.querySelector(".hide-btn");
+/* const show = document.querySelector(".btn-show");
+const hide = document.querySelector(".hide-btn"); */
 
 const showContent = () => {
-  const btnShow =
-    document.querySelector(".btn-show");
-  btnShow.style.display = "none";
+  const btnShowCont = document.querySelector(".btn-show");
+  btnShowCont.style.display = "none";
 
-  const section = document.querySelector(
-    ".main__section"
-  );
-  section.style.display = "grid";
+  const sectionCont = document.querySelector(".main__section");
+  sectionCont.style.display = "grid";
 
-  const content = document.querySelector(
-    ".description"
-  );
+  const content = document.querySelector(".description");
   content.style.display = "block";
 
-  const btnHide =
-    document.querySelector(".hide-btn");
-  btnHide.style.display = "block";
+  const btnHideCont = document.querySelector(".hide-btn");
+  btnHideCont.style.display = "block";
 };
 
 const hideContent = () => {
-  const btnShow =
-    document.querySelector(".btn-show");
-  btnShow.style.display = "block";
+  const btnShowCont = document.querySelector(".btn-show");
+  btnShowCont.style.display = "block";
 
-  const section = document.querySelector(
-    ".main__section"
-  );
-  section.style.display = "block";
+  const sectionCont = document.querySelector(".main__section");
+  sectionCont.style.display = "block";
 
-  const content = document.querySelector(
-    ".description"
-  );
+  const content = document.querySelector(".description");
   content.style.display = "none";
 
-  const btnHide =
-    document.querySelector(".hide-btn");
-  btnHide.style.display = "none";
+  const btnHideCont = document.querySelector(".hide-btn");
+  btnHideCont.style.display = "none";
 };
 
-export {
-  btnShow,
-  btnHide,
-  showContent,
-  hideContent,
-};
+export { /* show, hide, */ showContent, hideContent };
