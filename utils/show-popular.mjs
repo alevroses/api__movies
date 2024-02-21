@@ -8,7 +8,7 @@ const showPopular = async () => {
   const data = await getPopular();
   console.log(data);
 
-  /* main.innerHTML = ""; */
+  main.innerHTML = "";
 
   data.results.map((movie) => {
     const section = document.createElement("section");
@@ -89,9 +89,13 @@ const showPopular = async () => {
     /* console.log(movie); */
 
     btnShow.textContent = "+ Description";
+    btnShow.addEventListener("click", showContent);
 
     overview.textContent = movie.overview;
+    
     btnHide.textContent = "- Hide";
+    btnHide.addEventListener("click", hideContent);
+
 
     figure.append(img);
     rating.append(span);
@@ -100,9 +104,6 @@ const showPopular = async () => {
     description.append(cast, overview, btnHide);
     section.append(divDetails, btnShow, description);
     main.append(section);
-
-    btnShow.addEventListener("click", showContent);
-    btnHide.addEventListener("click", hideContent);
   });
 };
 
