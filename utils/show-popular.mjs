@@ -6,7 +6,7 @@ import { showContent, hideContent } from "./show-hide-details.mjs";
 
 const showPopular = async () => {
   const data = await getPopular();
-  console.log(data);
+  /* console.log(data); */
 
   main.innerHTML = "";
 
@@ -78,7 +78,7 @@ const showPopular = async () => {
 
       spanCast.textContent = "Cast: ";
 
-      console.log("length", actors.cast.length);
+      /* console.log("length", actors.cast.length); */
       actors.cast.map((name, index) => {
         index < 5 ? (spanCastNames.textContent += `${name.name}, `) : null;
       });
@@ -86,16 +86,13 @@ const showPopular = async () => {
       cast.append(spanCast, spanCastNames);
     })();
 
-    /* console.log(movie); */
-
     btnShow.textContent = "+ Description";
     btnShow.addEventListener("click", showContent);
 
     overview.textContent = movie.overview;
-    
+
     btnHide.textContent = "- Hide";
     btnHide.addEventListener("click", hideContent);
-
 
     figure.append(img);
     rating.append(span);

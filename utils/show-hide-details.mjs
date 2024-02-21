@@ -1,19 +1,24 @@
 /* const show = document.querySelector(".btn-show");
 const hide = document.querySelector(".hide-btn"); */
 
+import { main } from "../nodes.mjs";
+
 const showContent = (event) => {
+  console.log(event.currentTarget);
   const btnShowCont = event.currentTarget;
-  const cardContainer = btnShowCont.parentElement;
+  console.log("Parent: ", btnShowCont.parentElement);
+  const cardParent = btnShowCont.parentElement;
 
-  /* const sectionCont = document.querySelector(".main__section");
-  sectionCont.style.display = "grid"; */
-  const mainSection = cardContainer.closest(".main__section");
-  mainSection.style.display = "grid";
+  /* console.log(cardParent.closest(".main__section"));
+  const mainSection = cardParent.closest(".main__section");
+  mainSection.style.display = "grid"; */
+  cardParent.style.display = "grid";
 
-  const content = cardContainer.querySelector(".description");
+  console.log("Selector: ", cardParent.querySelector(".description"));
+  const content = cardParent.querySelector(".description");
   content.classList.remove("disabled");
 
-  const btnHideCont = cardContainer.querySelector(".hide-btn");
+  const btnHideCont = cardParent.querySelector(".hide-btn");
   btnHideCont.style.display = "block";
 
   btnShowCont.style.display = "none";
@@ -32,21 +37,35 @@ const hideContent = (event) => {
   const btnHideCont = document.querySelector(".hide-btn");
   btnHideCont.style.display = "none"; */
 
+  /* const btnShowCont = event.querySelector(""); */
+  console.log(event.currentTarget);
   const btnHideCont = event.currentTarget;
-  const cardContainer = btnHideCont.parentElement;
+  console.log(btnHideCont.parentElement);
+  const cardParent = btnHideCont.parentElement;
+  cardParent.classList.add("disabled");
 
-  const content = cardContainer.querySelector(".description");
-  content.classList.add("disabled");
+  console.log("main section: ", cardParent.closest(".main__section"));
+  const mainSection = cardParent.closest(".main__section");
+  /* mainSection.style.display = "block"; */
 
-  /* const sectionCont = document.querySelector(".main__section");
-  sectionCont.style.display = "block"; */
-  const mainSection = cardContainer.closest(".main__section");
-  mainSection.style.display = "block";
-
-  const btnShowCont = cardContainer.querySelector(".btn-show");
+  const btnShowCont = mainSection.querySelector(".btn-show");
   btnShowCont.style.display = "block";
 
-  btnHideCont.style.display = "none";
+  /* const btnShowCont =  */
+
+  /* const btnHideCont = event.currentTarget;
+  const cardParent = btnHideCont.parentElement;
+
+  const content = cardParent.querySelector(".description");
+  content.classList.add("disabled");
+
+  const mainSection = cardParent.closest(".main__section");
+  mainSection.style.display = "block";
+
+  const btnShowCont = cardParent.querySelector(".btn-show");
+  btnShowCont.style.display = "block";
+
+  btnHideCont.style.display = "none"; */
 };
 
 export { /* show, hide, */ showContent, hideContent };
