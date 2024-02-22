@@ -410,3 +410,27 @@ body {
   grid-template-columns: 0.5fr 1.5fr;
   margin: 0 0 20px 0;
 }
+
+/* Load ----------------- */
+
+.load {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  /* border: 1px solid var(--bg-blue-10); */
+}
+
+.load__more {
+  width: 33px;
+  height: 33px;
+  border: 1px solid var(--bg-blue-10);
+  color: var(--bg-blue-10);
+  background-color: var(--bg-blue-80);
+}
+
+.load__left img,
+.load__right img {
+  width: 100%;
+}
