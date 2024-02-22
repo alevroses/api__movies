@@ -5,8 +5,12 @@ import { getCast } from "../API/get-cast.mjs";
 import { showContent, hideContent } from "./show-hide-details.mjs";
 
 const showPopular = async () => {
+  /* const totalPages = 33;
+  const resultsPerPage = 20;
+  let allResults = []; */
+
   const data = await getPopular();
-  console.log(data);
+  /* console.log(data); */
 
   main.innerHTML = "";
 
@@ -50,9 +54,6 @@ const showPopular = async () => {
     overview.classList.add("description__overview");
     btnHide.classList.add("button-description", "hide-btn");
 
-    /* console.log(movie.poster_path);
-    console.log(movie.title); */
-
     img.setAttribute(
       "src",
       `https://image.tmdb.org/t/p/w500${movie.poster_path}`
@@ -78,7 +79,6 @@ const showPopular = async () => {
 
       spanCast.textContent = "Cast: ";
 
-      /* console.log("length", actors.cast.length); */
       actors.cast.map((name, index) => {
         index < 5 ? (spanCastNames.textContent += `${name.name}, `) : null;
       });
