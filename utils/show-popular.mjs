@@ -6,7 +6,7 @@ import { showContent, hideContent } from "./show-hide-details.mjs";
 
 const showPopular = async () => {
   const data = await getPopular();
-  /* console.log(data); */
+  console.log(data);
 
   main.innerHTML = "";
 
