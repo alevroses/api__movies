@@ -1,8 +1,8 @@
 import { autorization } from "./authorization.mjs";
 
-const getPopular = async () => {
+const getPopular = async (page) => {
   const response = await fetch(
-    "https://api.themoviedb.org/3/movie/popular?language=en-US&page=33",
+    `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${page}`,
     {
       method: "GET",
       headers: {
@@ -12,6 +12,8 @@ const getPopular = async () => {
     }
   );
   const data = await response.json();
+
+  /* console.log(data); */
   return data;
 };
 

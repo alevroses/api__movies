@@ -1,3 +1,6 @@
+import { getPopular } from "../API/get-popular.mjs";
+import { showPopular } from "./show-popular.mjs";
+
 const pagination = document.querySelector(".pagination");
 const leftBtn = document.querySelector(".prevPageBtn");
 const pageNumbers = document.querySelector(".pageNumbers");
@@ -6,7 +9,11 @@ const rightBtn = document.querySelector(".nextPageBtn");
 let currentPage = 1;
 let totalPages = 5464;
 
-const showContent = (page) => {};
+const showPageData = async (page) => {
+  const data = await getPopular(page);
+  /* console.log(data); */
+  return data;
+};
 
 const generatePageNumbers = () => {
   pageNumbers.innerHTML = "";
@@ -26,7 +33,9 @@ const generatePageNumbers = () => {
     pageNumber.addEventListener("click", () => {
       currentPage = i;
 
+      showPageData(currentPage);
       generatePageNumbers();
+      showPopular();
     });
 
     pageNumbers.append(pageNumber);
@@ -36,17 +45,23 @@ const generatePageNumbers = () => {
 leftBtn.addEventListener("click", () => {
   if (currentPage > 1) {
     currentPage--;
+
+    showPageData(currentPage);
     generatePageNumbers();
+    showPopular();
   }
 });
 
 rightBtn.addEventListener("click", () => {
   if (totalPages > currentPage) {
     currentPage++;
+
+    showPageData(currentPage);
     generatePageNumbers();
+    showPopular();
   }
 });
 
 /* generatePageNumbers(); */
 
-export { generatePageNumbers };
+export { showPageData, generatePageNumbers, currentPage };
