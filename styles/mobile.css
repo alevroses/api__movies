@@ -350,6 +350,7 @@ body {
   background-color: var(--highlight-green);
   bottom: 0;
   left: 36px;
+  /* right: 0; */
   text-align: center;
   padding: 2px 0 0 0;
   font-size: 12px;
@@ -411,9 +412,9 @@ body {
   margin: 0 0 20px 0;
 }
 
-/* Load ----------------- */
+/* Pagination ----------------- */
 
-.load {
+.pagination {
   width: 100vw;
   display: flex;
   justify-content: space-between;
@@ -422,15 +423,32 @@ body {
   /* border: 1px solid var(--bg-blue-10); */
 }
 
-.load__more {
+.load {
   width: 33px;
   height: 33px;
   border: 1px solid var(--bg-blue-10);
   color: var(--bg-blue-10);
-  background-color: var(--bg-blue-80);
+  background-color: var(--bg-blue-100);
 }
 
-.load__left img,
-.load__right img {
+.prevPageBtn,
+.nextPageBtn {
+  display: flex;
+  justify-content: center;
+}
+
+.prevPageBtn img,
+.nextPageBtn img {
+  width: 10px;
+}
+
+.pageNumbers {
   width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.active {
+  color: var(--highlight-green);
+  border: 1px solid var(--highlight-green);
 }
