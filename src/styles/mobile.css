@@ -447,3 +447,8 @@ body {
   display: flex;
   justify-content: space-evenly;
 }
+
+.active {
+  color: var(--highlight-green);
+  border: 1px solid var(--highlight-green);
+}
