@@ -6,7 +6,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
     <link
       rel="preconnect"
       href="https://fonts.gstatic.com"
@@ -19,7 +22,10 @@
     <link rel="stylesheet" href="./styles/mobile.css" />
 
     <!-- Google Fonts 2 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
     <link
       rel="preconnect"
       href="https://fonts.gstatic.com"
@@ -29,7 +35,11 @@
       href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/png" href="./img/lookmovie-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./img/lookmovie-icon.png"
+    />
     <title>Look Movie</title>
   </head>
   <body>
@@ -44,19 +54,35 @@
             />
           </a>
           <div class="section__links">
-            <a class="section__link section__link--movies" href=""
+            <a
+              class="section__link section__link--movies"
+              href=""
               >MOVIES</a
             >
-            <a class="section__link section__link--shows" href=""
+            <a
+              class="section__link section__link--shows"
+              href=""
               >TV SHOWS</a
             >
           </div>
-          <div class="section__icons">
+          <div class="section__icons search">
             <img
-              class="section__icon section__icon--search"
+              class="section__icon section__icon--search disabled"
               src="./img/search-icon.svg"
               alt="Search Icon"
             />
+            <div class="section__search disabled">
+              <div class="section__search--movie">
+                <img src="./img/search-icon.svg" alt="" />
+                <input
+                  type="text"
+                  placeholder="Search for a movie or TV Show"
+                />
+                <img src="./img/close-icon.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="section__icons login">
             <img
               class="section__icon section__icon--login"
               src="./img/user-icon.svg"
@@ -68,7 +94,9 @@
           <a class="menu__link" href="">TRENDING</a>
           <a class="menu__link" href="">LATEST</a>
           <div class="dropdowm">
-            <a class="menu__link dropdowm__link" href="">CATEGORIES</a>
+            <a class="menu__link dropdowm__link" href=""
+              >CATEGORIES</a
+            >
             <img
               class="dropdowm__icon"
               src="./img/chevron-down-icon.svg"
@@ -159,7 +187,10 @@
 
     <section class="pagination">
       <figure class="prevPageBtn load load__left">
-        <img src="./img/triangle-arrow-left-icon.svg" alt="" />
+        <img
+          src="./img/triangle-arrow-left-icon.svg"
+          alt=""
+        />
       </figure>
       <div class="pageNumbers">
         <!-- <button class="load clicked">1</button>
@@ -169,7 +200,10 @@
         <button class="load clicked">5</button> -->
       </div>
       <figure class="nextPageBtn load load__right">
-        <img src="./img/triangle-arrow-right-icon.svg" alt="" />
+        <img
+          src="./img/triangle-arrow-right-icon.svg"
+          alt=""
+        />
       </figure>
     </section>
     <script src="./main.mjs" type="module"></script>

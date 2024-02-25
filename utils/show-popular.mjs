@@ -1,16 +1,18 @@
-import { getPopular } from "../API/get-popular.mjs";
 import { main } from "../nodes.mjs";
 import { getDetails } from "../API/get-details.mjs";
 import { getCast } from "../API/get-cast.mjs";
-import { showContent, hideContent } from "./show-hide-details.mjs";
-import { showPageData, currentPage } from "./create-page-numbers.mjs";
+import {
+  showContent,
+  hideContent,
+} from "./show-hide-details.mjs";
+import {
+  showPageData,
+  currentPage,
+} from "./create-page-numbers.mjs";
 
 const showPopular = async () => {
-  /* const data = await getPopular(123); */
   const data = await showPageData(currentPage);
-  console.log(data);
-
-  /* showPageData(currentPage); */
+  /* console.log(data); */
 
   main.innerHTML = "";
 
