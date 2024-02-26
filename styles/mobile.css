@@ -120,6 +120,14 @@ body {
   position: absolute;
   top: 6px;
   z-index: 1;
+  /* left: 240px; */
+}
+
+/* Test */
+.section__icons.search.disabled {
+  display: flex;
+  justify-content: end;
+  margin: 0 25px 0 0;
 }
 
 .section__search {
@@ -130,10 +138,17 @@ body {
   /* position: absolute; */
 }
 
-/* desbloquear.... */
-.section__icon--search.disabled {
+.section__search.disabled {
   display: none;
 }
+
+/* desbloquear.... */
+/* .section__icon--search.disabled {
+  display: none;
+} */
+
+/* .section__icon--search {
+} */
 
 .section__search--movie {
   width: 100%;

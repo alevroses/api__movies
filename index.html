@@ -65,7 +65,7 @@
               >TV SHOWS</a
             >
           </div>
-          <div class="section__icons search">
+          <div class="section__icons search disabled">
             <img
               class="section__icon section__icon--search disabled"
               src="./img/search-icon.svg"
@@ -79,11 +79,17 @@
                   type="text"
                   placeholder="Search for a movie or TV Show"
                 />
-                <img src="./img/close-icon.svg" alt="" />
+                <img
+                  class="close-icon"
+                  src="./img/close-icon.svg"
+                  alt=""
+                />
               </div>
               <div class="section__show--movies disabled">
                 <!-- Reemplazar movies  -->
-                <h3>MOVIES (32) - VIEW ALL</h3>
+                <h3 class="total-movies">
+                  MOVIES (0) - VIEW ALL
+                </h3>
                 <div class="container-movies">
                   <!-- <div class="container-movie">
                     <figure>
@@ -99,7 +105,9 @@
                     </div>
                   </div> -->
                 </div>
-                <h3>SHOWS (4) - VIEW ALL</h3>
+                <h3 class="total-shows">
+                  SHOWS (0) - VIEW ALL
+                </h3>
                 <div class="container-shows">
                   <div class="container-show">
                     <figure>
