@@ -105,26 +105,29 @@ body {
   color: var(--highlight-green);
 }
 
-.section__icons {
+/* .section__icons {
   display: flex;
-  /* justify-content: end; */
   justify-self: end;
   gap: 10px;
-}
+} */
 
 /* Search ----------------------------- */
 
 .search {
   justify-self: center;
+  width: 100vw;
+  height: auto;
   position: absolute;
-  width: 95vw;
-  /* background-color: var(--bg-blue-100); */
-  margin: 20px 0 0 0;
+  top: 6px;
+  z-index: 1;
 }
 
 .section__search {
-  /* display: none; */
-  background-color: transparent;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 50px auto;
+  /* background-color: transparent; */
+  /* position: absolute; */
 }
 
 /* desbloquear.... */
@@ -133,7 +136,7 @@ body {
 }
 
 .section__search--movie {
-  width: 94vw;
+  width: 100%;
   height: 48px;
   padding: 0 8px;
   display: flex;
@@ -142,6 +145,7 @@ body {
   border: 4px solid var(--bg-blue-100);
   border-radius: 32px;
   background-color: var(--bg-blue-60);
+  /* position: absolute; */
 }
 
 .section__search--movie img {
@@ -152,7 +156,7 @@ body {
   width: 100%;
   height: 32px;
   margin: 0 15px;
-  
+
   color: var(--bg-blue-10);
   background-color: transparent;
   border: none;
@@ -162,12 +166,68 @@ body {
 
 .section__search--movie input::placeholder {
   font-size: 14px;
-  color: var(--bg-blue-20); 
+  color: var(--bg-blue-20);
 }
 
 .section__search--movie input:focus {
   outline: none;
   caret-color: var(--bg-blue-10);
+}
+
+.section__show--movies {
+  display: grid;
+  gap: 15px;
+  padding: 10px 15px;
+  border: 4px solid var(--bg-blue-100);
+  color: var(--bg-blue-10);
+  background-color: var(--bg-blue-60);
+}
+
+/* .section__show--movies h3 {
+  margin: 0 0 15px 0;
+} */
+
+.section__show--movies .container-movies,
+.container-shows {
+  display: grid;
+  gap: 15px;
+}
+
+.section__show--movies .container-movie,
+.container-show {
+  width: 100%;
+  /* height: 50px; */
+  display: grid;
+  grid-template-columns: 70px auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.container-movie figure,
+.container-show figure {
+  display: flex;
+  position: relative;
+}
+
+.container-movie img,
+.container-show img {
+  width: 70px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.container-movie span,
+.container-show span {
+  width: 40px;
+  height: 15.5px;
+  text-align: center;
+  color: var(--white);
+  font-size: 12px;
+  font-weight: bold;
+  background-color: var(--bg-blue-100);
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 .section-menu {
@@ -202,14 +262,8 @@ body {
 
 .container {
   width: 100vw;
-  /* max-width: 1000px; */
-  /* min-height: 300px;
-  max-height: 600px; */
   height: 460px;
-  /* min-height: 450px; */
   display: grid;
-  /* grid-template-columns: 1fr;
-  grid-template-rows: 1fr; */
   justify-items: center;
 
   overflow: hidden;
@@ -432,7 +486,7 @@ body {
   position: absolute;
 }
 
-.btn-show {
+.btn-movies {
   right: 20px;
   /* top: 100px; */
   bottom: 10px;
