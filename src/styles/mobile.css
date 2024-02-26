@@ -522,6 +522,8 @@ body {
   background-color: var(--bg-blue-40);
   border-radius: 10px 0 0 10px;
   position: absolute;
+  right: 10px;
+  bottom: 10px;
 }
 
 .btn-movies {
@@ -552,7 +554,7 @@ body {
 .hide-btn {
   display: none;
   width: 50px;
-  right: 20px;
+  right: 10px;
   bottom: 10px;
   position: absolute;
 }
@@ -601,5 +603,5 @@ body {
 
 .active {
   color: var(--highlight-green);
-  border: 1px solid var(--highlight-green);
+  border: 2px solid var(--highlight-green);
 }
