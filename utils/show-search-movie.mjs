@@ -81,6 +81,7 @@ input.addEventListener("input", () => {
 
     showSearchMovie(filmName);
   } else {
+    counter = 0;
     disabled.style.display = "none";
   }
 });
