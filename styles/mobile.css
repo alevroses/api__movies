@@ -114,7 +114,9 @@ body {
 /* Search ----------------------------- */
 
 .search {
-  justify-self: center;
+  display: flex;
+  /* justify-content: center; */
+  /* justify-self: center; */
   /* width: 100vw; */
   height: auto;
   /* position: absolute; */
@@ -139,7 +141,8 @@ body {
   /* background-color: transparent; */
   position: absolute;
   gap: 4px;
-  right: -58px;
+  /* right: calc(10% - 58px); */
+  right: -18vw;
   top: -15px;
 }
 
