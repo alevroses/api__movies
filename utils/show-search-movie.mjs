@@ -93,9 +93,12 @@ searchIcon.addEventListener("click", () => {
 });
 
 closeIcon.addEventListener("click", () => {
+  input.value = "";
+
   sectionSearch.classList.add("disabled");
   searchIcon.style.display = "block";
   fatherSearch.classList.add("disabled");
+  disabled.style.display = "none";
 });
 
 export { showSearchMovie };
