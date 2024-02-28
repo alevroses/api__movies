@@ -29,13 +29,6 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-
-  /* background: var(--bg-blue-100);
-  background: linear-gradient(
-    180deg,
-    var(--bg-blue-100) 44%,
-    var(--bg-blue-60) 100%
-  ); */
   background-color: var(--bg-blue-100);
 }
 

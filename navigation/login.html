@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/mobile.css" />
+
+    <!-- Google Fonts 2 -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../img/lookmovie-icon.png"
+    />
+
+    <link rel="stylesheet" href="../styles/mobile.css" />
+    <link rel="stylesheet" href="./login.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <section class="section">
+          <a class="section__link-logo" href="../index.html">
+            <img
+              class="section__logo"
+              src="../img/lookmovie-logo.png"
+              alt="Look Movie Logo"
+            />
+          </a>
+          <div class="section__links">
+            <a
+              class="section__link section__link--movies"
+              href=""
+              >MOVIES</a
+            >
+            <a
+              class="section__link section__link--shows"
+              href=""
+              >TV SHOWS</a
+            >
+          </div>
+          <div class="section__icons search disabled">
+            <img
+              class="section__icon section__icon--search disabled"
+              src="../img/search-icon.svg"
+              alt="Search Icon"
+            />
+            <div class="section__search disabled">
+              <div class="section__search--movie">
+                <img src="../img/search-icon.svg" alt="" />
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Search for a movie or TV Show"
+                />
+                <img
+                  class="close-icon"
+                  src="../img/close-icon.svg"
+                  alt=""
+                />
+              </div>
+              <div class="section__show--movies disabled">
+                <!-- Reemplazar movies  -->
+                <h3 class="total-movies">
+                  MOVIES (0) - VIEW ALL
+                </h3>
+                <div class="container-movies"></div>
+                <h3 class="total-shows">
+                  SHOWS (0) - VIEW ALL
+                </h3>
+                <div class="container-shows"></div>
+              </div>
+            </div>
+          </div>
+          <div class="section__icons login">
+            <img
+              class="section__icon section__icon--login"
+              src="../img/user-icon.svg"
+              alt="Login Icon"
+            />
+            <div class="login__credentials">
+              <a class="login-access" href="/">Login</a>
+              <span class="line"></span>
+              <a class="signup-access" href="">Signup</a>
+            </div>
+          </div>
+        </section>
+        <section class="section-menu">
+          <a class="menu__link" href="">TRENDING</a>
+          <a class="menu__link" href="">LATEST</a>
+          <div class="dropdowm">
+            <a class="menu__link dropdowm__link" href=""
+              >CATEGORIES</a
+            >
+            <img
+              class="dropdowm__icon"
+              src="../img/chevron-down-icon.svg"
+              alt="Display icon"
+            />
+          </div>
+          <a class="menu__link" href="">GENRES</a>
+          <a class="menu__link" href="">FILTER</a>
+        </section>
+      </nav>
+    </header>
+    <!-- <script src="../main.mjs" type="module"></script> -->
+  </body>
+</html>
