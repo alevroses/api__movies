@@ -23,6 +23,10 @@ const sectionSearch = document.querySelector(
 );
 const closeIcon = document.querySelector(".close-icon");
 
+const loginCredentials = document.querySelector(
+  ".login__credentials"
+);
+
 let counter = 0;
 
 const showSearchMovie = async ({ name, star }) => {
@@ -107,6 +111,8 @@ searchIcon.addEventListener("click", () => {
   sectionSearch.classList.remove("disabled");
   searchIcon.style.display = "none";
   fatherSearch.classList.remove("disabled");
+
+  loginCredentials.style.display = "none";
 });
 
 closeIcon.addEventListener("click", () => {
