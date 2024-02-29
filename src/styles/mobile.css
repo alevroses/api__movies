@@ -416,17 +416,24 @@ body {
 }
 
 .others {
-  width: 54px;
+  display: flex;
+  width: 58px;
   height: 34px;
-  /* justify-self: center; */
-  text-align: center;
-  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  /* text-align: center; */
+  /* align-content: center; */
   border-radius: 10px;
   /* border: 1px solid var(--bg-blue-100); */
   color: var(--bg-blue-10);
   background-color: var(--bg-blue-100);
   opacity: 0.9;
   font-weight: bold;
+}
+
+.others .icon {
+  width: 20px;
+  height: 20px;
 }
 
 .highlight {
