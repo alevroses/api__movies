@@ -7,7 +7,7 @@ const containerShows = document.querySelector(
 const input = document.querySelector(".input");
 let counter = 0;
 
-const showSearchTv = async (name) => {
+const showSearchTv = async ({ name, star }) => {
   const data = await getSearchTv(name);
 
   containerShows.innerHTML = "";
@@ -38,7 +38,7 @@ const showSearchTv = async (name) => {
             <figure class="star-icon">
               <img
                 class="star-img"
-                src="./img/star-icon.svg"
+                src=${star}
                 alt=""
               />
             </figure>
@@ -55,8 +55,25 @@ const showSearchTv = async (name) => {
 input.addEventListener("input", () => {
   const title = input.value.toLowerCase();
 
-  if (title.length > 1) {
-    showSearchTv(title);
+  if (
+    title.length > 1 &&
+    (location.href.endsWith("api__movies/") ||
+      location.href.endsWith("index.html"))
+  ) {
+    showSearchTv({
+      name: title,
+      star: "./img/star-icon.svg",
+    });
+  } else if (
+    title.length > 1 &&
+    location.href.endsWith("login.html")
+  ) {
+    /* disabled.style.display = "grid"; */
+
+    showSearchTv({
+      name: title,
+      star: "../img/star-icon.svg",
+    });
   } else {
     counter = 0;
   }
