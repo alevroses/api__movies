@@ -25,7 +25,7 @@ const closeIcon = document.querySelector(".close-icon");
 
 let counter = 0;
 
-const showSearchMovie = async (name) => {
+const showSearchMovie = async ({ name, star }) => {
   const data = await getSearchMovies(name);
 
   containerMovies.innerHTML = "";
@@ -56,7 +56,7 @@ const showSearchMovie = async (name) => {
             <figure class="star-icon">
               <img
                 class="star-img"
-                src="./img/star-icon.svg"
+                src=${star}
                 alt=""
               />
             </figure>
@@ -76,10 +76,27 @@ const showSearchMovie = async (name) => {
 input.addEventListener("input", () => {
   const filmName = input.value.toLowerCase();
 
-  if (filmName.length > 1) {
+  if (
+    filmName.length > 1 &&
+    (location.href.endsWith("api__movies/") ||
+      location.href.endsWith("index.html"))
+  ) {
     disabled.style.display = "grid";
 
-    showSearchMovie(filmName);
+    showSearchMovie({
+      name: filmName,
+      star: "./img/star-icon.svg",
+    });
+  } else if (
+    filmName.length > 1 &&
+    location.href.endsWith("login.html")
+  ) {
+    disabled.style.display = "grid";
+
+    showSearchMovie({
+      name: filmName,
+      star: "../img/star-icon.svg",
+    });
   } else {
     counter = 0;
     disabled.style.display = "none";
@@ -101,4 +118,16 @@ closeIcon.addEventListener("click", () => {
   disabled.style.display = "none";
 });
 
-export { showSearchMovie };
+export {
+  fatherSearch,
+  searchIcon,
+  input,
+  totalMovies,
+  sectionSearchMovie,
+  disabled,
+  containerMovies,
+  sectionSearch,
+  closeIcon,
+  counter,
+  showSearchMovie,
+};
