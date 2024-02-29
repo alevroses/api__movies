@@ -1,17 +1,139 @@
-/* * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+:root {
+  --bg-blue-100: #020617;
+  --bg-blue-80: #0f172a;
+  --bg-blue-60: #1e293b;
+  --bg-blue-50: #334155;
+  --bg-blue-40: #475569;
+  --bg-blue-30: #64748b;
+  --bg-blue-20: #94a3b8;
+  --bg-blue-10: #cbd5e1;
+  --white: #ffffff;
+  --highlight-green: #dcf836;
+  --highlight-pink: #de2239;
 }
 
-body {
-  width: 100vw;
-  height: auto;
+/* body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+} */
 
-  font-family: "Dosis", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  background-color: var(--bg-blue-100);
+/* .login-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
  */
+
+body {
+  color: var(--bg-blue-20);
+}
+
+.login-container {
+  display: flex;
+  width: 100vw;
+  height: 84vh;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  padding: 25px 0 0 0;
+  background-color: var(--bg-blue-100);
+}
+
+.form {
+  display: grid;
+  width: 94%;
+  height: 80%;
+  /* margin: 0 10px; */
+  padding: 15px;
+  border-radius: 4px;
+
+  border: 2px solid var(--bg-blue-40);
+  font-weight: bolder;
+  background-color: var(--bg-blue-80);
+}
+
+.form-group {
+  display: grid;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--bg-blue-60);
+}
+
+.form-group.remember {
+  display: flex;
+  justify-items: start;
+  gap: 5px;
+}
+
+.remember .checkbox {
+  width: auto;
+}
+
+.form-group.forgot {
+  display: flex;
+  justify-content: end;
+}
+
+.form-group a {
+  text-decoration: none;
+  color: #337ab7;
+  font-weight: 500;
+}
+
+.button {
+  border: none;
+  font-weight: bold;
+  color: var(--bg-blue-10);
+  background-color: var(--highlight-pink);
+}
