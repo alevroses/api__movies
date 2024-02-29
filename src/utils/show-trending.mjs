@@ -11,33 +11,27 @@ const showTrending = async () => {
   let increase = 0;
   let decrease = 21;
 
-  results.map(movie => {
-    const section =
-      document.createElement("section");
+  results.map((movie) => {
+    const section = document.createElement("section");
 
     const figure = document.createElement("figure");
     const img = document.createElement("img");
 
     const divArrows = document.createElement("div");
     const aLeft = document.createElement("a");
-    const imgLeftIcon =
-      document.createElement("img");
+    const imgLeftIcon = document.createElement("img");
     const aRight = document.createElement("a");
-    const imgRightIcon =
-      document.createElement("img");
+    const imgRightIcon = document.createElement("img");
 
-    const divDetails =
-      document.createElement("div");
-    const divDetailsOthers =
-      document.createElement("div");
-    const rating = document.createElement("p");
-    const quality = document.createElement("p");
-    const runtime = document.createElement("p");
+    const divDetails = document.createElement("div");
+    const divDetailsOthers = document.createElement("div");
+    const rating = document.createElement("div");
+    const quality = document.createElement("div");
+    const runtime = document.createElement("div");
     const h1 = document.createElement("h1");
     const p = document.createElement("p");
     const overview = document.createElement("p");
-    const buttonWatch =
-      document.createElement("button");
+    const buttonWatch = document.createElement("button");
 
     const divHidden = document.createElement("div");
 
@@ -55,9 +49,7 @@ const showTrending = async () => {
     aRight.classList.add("right");
 
     divDetails.classList.add("details");
-    divDetailsOthers.classList.add(
-      "details__others"
-    );
+    divDetailsOthers.classList.add("details__others");
     rating.classList.add("others");
     quality.classList.add("others", "highlight");
     runtime.classList.add("others");
@@ -83,29 +75,17 @@ const showTrending = async () => {
     );
 
     if (decrease === 20) {
-      aLeft.setAttribute(
-        "href",
-        `#item${decrease}`
-      );
+      aLeft.setAttribute("href", `#item${decrease}`);
     } else {
-      aLeft.setAttribute(
-        "href",
-        `#item${increase - 1}`
-      );
+      aLeft.setAttribute("href", `#item${increase - 1}`);
     }
 
     if (increase === 20) {
       increase = 0;
 
-      aRight.setAttribute(
-        "href",
-        `#item${increase + 1}`
-      );
+      aRight.setAttribute("href", `#item${increase + 1}`);
     } else {
-      aRight.setAttribute(
-        "href",
-        `#item${increase + 1}`
-      );
+      aRight.setAttribute("href", `#item${increase + 1}`);
     }
 
     figure.append(img);
@@ -126,8 +106,7 @@ const showTrending = async () => {
       h1.textContent =
         `${movie.title} (${year})`.toUpperCase();
 
-      const voteAverage =
-        details.vote_average.toFixed(1);
+      const voteAverage = details.vote_average.toFixed(1);
       rating.textContent = `🔥 ${voteAverage}`;
       quality.textContent = "FHD";
       runtime.textContent = `⏱ ${details.runtime}`;
