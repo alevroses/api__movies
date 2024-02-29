@@ -26,8 +26,18 @@ const showTrending = async () => {
     const divDetails = document.createElement("div");
     const divDetailsOthers = document.createElement("div");
     const rating = document.createElement("div");
+    const ratingIcon =
+      document.createElement("img"); /* New */
+    const ratingScore = document.createElement("p"); /* New */
+
     const quality = document.createElement("div");
+    const qualityType = document.createElement("p"); /* New */
+
     const runtime = document.createElement("div");
+    const runtimeIcon =
+      document.createElement("img"); /* New */
+    const runtimeData = document.createElement("p"); /* New */
+
     const h1 = document.createElement("h1");
     const p = document.createElement("p");
     const overview = document.createElement("p");
@@ -50,9 +60,27 @@ const showTrending = async () => {
 
     divDetails.classList.add("details");
     divDetailsOthers.classList.add("details__others");
+
     rating.classList.add("others");
+    ratingIcon.classList.add("rating-icon", "icon"); /* New */
+    ratingScore.classList.add(
+      "rating-score",
+      "value"
+    ); /* New */
+
     quality.classList.add("others", "highlight");
+    qualityType.classList.add("quality-type"); /* New */
+
     runtime.classList.add("others");
+    runtimeIcon.classList.add(
+      "runtime-icon",
+      "icon"
+    ); /* New */
+    runtimeData.classList.add(
+      "runtime-data",
+      "value"
+    ); /* New */
+
     h1.classList.add("details__title");
     p.classList.add("details__genre");
     overview.classList.add("details__overview");
@@ -107,9 +135,18 @@ const showTrending = async () => {
         `${movie.title} (${year})`.toUpperCase();
 
       const voteAverage = details.vote_average.toFixed(1);
-      rating.textContent = `🔥 ${voteAverage}`;
-      quality.textContent = "FHD";
-      runtime.textContent = `⏱ ${details.runtime}`;
+      /* rating.textContent = `🔥 ${voteAverage}`; */
+      ratingIcon.setAttribute("src", "./img/star-icon.svg");
+      ratingScore.textContent = `${voteAverage}`;
+      rating.append(ratingIcon, ratingScore);
+
+      qualityType.textContent = "FHD";
+      quality.append(qualityType);
+
+      /* runtime.textContent = `⏱ ${details.runtime}`; */
+      runtimeIcon.setAttribute("src", "./img/clock-icon.svg");
+      runtimeData.textContent = `${details.runtime}`;
+      runtime.append(runtimeIcon, runtimeData);
 
       for (const key in details.genres) {
         p.textContent +=
