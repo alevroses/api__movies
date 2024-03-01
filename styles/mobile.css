@@ -56,7 +56,7 @@ body {
 
   align-items: center;
   height: 44px;
-  padding: 0 15px;
+  padding: 0 10px; /* test */
 
   border-bottom: 1px solid var(--bg-blue-60);
   position: relative;
@@ -267,6 +267,7 @@ body {
 .login {
   display: flex;
   position: relative;
+  margin:  0 0 0 10px;
 }
 
 .login__credentials {
