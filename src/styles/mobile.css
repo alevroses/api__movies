@@ -438,6 +438,7 @@ body {
 }
 
 .highlight {
+  opacity: 1;
   background-color: var(--highlight-green);
   color: var(--bg-blue-100);
   font-weight: 900;
