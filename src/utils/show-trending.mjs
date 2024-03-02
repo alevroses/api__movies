@@ -1,5 +1,4 @@
 import { getTrending } from "../API/get-trending.mjs";
-import { container } from "../nodes.mjs";
 import { sliderContainer } from "../nodes.mjs";
 import { getDetails } from "../API/get-details.mjs";
 
@@ -148,15 +147,18 @@ const showTrending = async () => {
     divDetailsOthers.append(runtime);
     divDetails.append(divDetailsOthers);
     divDetails.append(p);
-    divDetails.append(overview);
+    divDetails.append(overview, buttonWatch);
 
     section.append(divDetails);
-    section.append(buttonWatch);
+    /* section.append(buttonWatch); */
     /* section.append(divHidden); */
 
     /* Slider */
     let counter = 1;
-    const imageWidth = img.clientWidth;
+    // const imageWidth = img.clientWidth;
+    // const imageWidth = img.naturalWidth;
+    // const imageWidth = img.width;
+    const imageWidth = img.getBoundingClientRect().width;
 
     setInterval(() => {
       sliderContainer.style.transform = `translateX(${
@@ -166,7 +168,7 @@ const showTrending = async () => {
 
       counter++;
 
-      console.log("width", -imageWidth * counter);
+      /* console.log("width", -imageWidth * counter); */
 
       if (counter === 20) {
         counter = 0;
