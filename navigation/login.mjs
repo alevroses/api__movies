@@ -1,10 +1,10 @@
 import { showHidenLogin } from "../utils/show-hide-login.mjs";
-import {
-  input,
-  showSearchMovie,
-} from "../utils/show-search-movie.mjs";
+import { input, showSearchMovie } from "../utils/show-search-movie.mjs";
 import { showSearchTv } from "../utils/show-search-tv.mjs";
-showSearchTv;
+
+/* showSearchTv(); */
+
+
 
 showHidenLogin();
 /* showSearchMovie(); */

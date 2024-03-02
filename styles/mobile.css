@@ -374,7 +374,7 @@ body {
 
   width: 100%;
   height: auto;
-  top: 40px;
+  top: 20px;
   padding: 0 15px;
 }
 
@@ -390,19 +390,24 @@ body {
   position: absolute;
   display: flex;
   flex-direction: column;
+
   width: 100%;
-  height: 66%;
+  /* height: 66%; */
+  /* height: 280px; */
+  height: auto;
+  gap: 10px;
+  /* gap: 1.5vw; */
   max-height: 300px;
   color: var(--white);
   text-shadow: 1px 1px 1px var(--bg-blue-100);
 
-  padding: 0 15px;
+  padding: 15px 15px 0;
 }
 
 .details__title {
   font-size: 24px;
-  overflow: hidden;
-  height: 66px;
+  /* overflow: hidden; */
+  height: auto;
 }
 
 .details__others {
@@ -450,7 +455,7 @@ body {
 }
 
 .details__overview {
-  margin: 15px 0 0 0;
+  /* margin: 15px 0 0 0; */
   font-size: 18px;
 
   overflow: hidden;
@@ -460,12 +465,13 @@ body {
 }
 
 .watch {
-  position: absolute;
+  /* position: absolute; */
   width: 110px;
   height: 35px;
   border-radius: 5px;
   border: none;
-  bottom: 6vw;
+  align-self: center;
+  /* bottom: 6vw; */
   font-weight: 600;
   font-size: 15px;
   color: var(--bg-blue-10);

@@ -1,9 +1,7 @@
 import { getSearchTv } from "../API/get-search-tv.mjs";
 
 const totalTv = document.querySelector(".total-shows");
-const containerShows = document.querySelector(
-  ".container-shows"
-);
+const containerShows = document.querySelector(".container-shows");
 const input = document.querySelector(".input");
 let counter = 0;
 
@@ -55,19 +53,23 @@ const showSearchTv = async ({ name, star }) => {
 input.addEventListener("input", () => {
   const title = input.value.toLowerCase();
 
+  const url = location.href;
+  const item = url.split("m");
+  const numberInString = item[item.length - 1];
+  const number = parseInt(numberInString);
+  /* console.log(url, item, numberInString, number); */
+
   if (
     title.length > 1 &&
     (location.href.endsWith("api__movies/") ||
-      location.href.endsWith("index.html"))
+      location.href.endsWith("index.html") ||
+      location.href.endsWith(`#item${number}`))
   ) {
     showSearchTv({
       name: title,
       star: "./img/star-icon.svg",
     });
-  } else if (
-    title.length > 1 &&
-    location.href.endsWith("login.html")
-  ) {
+  } else if (title.length > 1 && location.href.endsWith("login.html")) {
     /* disabled.style.display = "grid"; */
 
     showSearchTv({
