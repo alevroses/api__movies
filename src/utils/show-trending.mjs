@@ -1,5 +1,6 @@
 import { getTrending } from "../API/get-trending.mjs";
 import { container } from "../nodes.mjs";
+import { sliderContainer } from "../nodes.mjs";
 import { getDetails } from "../API/get-details.mjs";
 
 const showTrending = async () => {
@@ -7,7 +8,8 @@ const showTrending = async () => {
 
   const results = data.results;
 
-  container.innerHTML = "";
+  /* container.innerHTML = ""; */
+  sliderContainer.innerHTML = "";
   let increase = 0;
   let decrease = 21;
 
@@ -26,16 +28,14 @@ const showTrending = async () => {
     const divDetails = document.createElement("div");
     const divDetailsOthers = document.createElement("div");
     const rating = document.createElement("div");
-    const ratingIcon =
-      document.createElement("img"); /* New */
+    const ratingIcon = document.createElement("img"); /* New */
     const ratingScore = document.createElement("p"); /* New */
 
     const quality = document.createElement("div");
     const qualityType = document.createElement("p"); /* New */
 
     const runtime = document.createElement("div");
-    const runtimeIcon =
-      document.createElement("img"); /* New */
+    const runtimeIcon = document.createElement("img"); /* New */
     const runtimeData = document.createElement("p"); /* New */
 
     const h1 = document.createElement("h1");
@@ -50,7 +50,7 @@ const showTrending = async () => {
 
     section.setAttribute("id", `item${increase}`);
 
-    section.classList.add("container__div");
+    section.classList.add("container__div", "slider");
     figure.classList.add("banner");
     img.classList.add("banner__movie");
 
@@ -63,23 +63,14 @@ const showTrending = async () => {
 
     rating.classList.add("others");
     ratingIcon.classList.add("rating-icon", "icon"); /* New */
-    ratingScore.classList.add(
-      "rating-score",
-      "value"
-    ); /* New */
+    ratingScore.classList.add("rating-score", "value"); /* New */
 
     quality.classList.add("others", "highlight");
     qualityType.classList.add("quality-type"); /* New */
 
     runtime.classList.add("others");
-    runtimeIcon.classList.add(
-      "runtime-icon",
-      "icon"
-    ); /* New */
-    runtimeData.classList.add(
-      "runtime-data",
-      "value"
-    ); /* New */
+    runtimeIcon.classList.add("runtime-icon", "icon"); /* New */
+    runtimeData.classList.add("runtime-data", "value"); /* New */
 
     h1.classList.add("details__title");
     p.classList.add("details__genre");
@@ -93,14 +84,8 @@ const showTrending = async () => {
       `https://image.tmdb.org/t/p/w500${movie.poster_path}`
     );
 
-    imgLeftIcon.setAttribute(
-      "src",
-      "./img/chevron-left-icon.svg"
-    );
-    imgRightIcon.setAttribute(
-      "src",
-      "./img/chevron-right-icon.svg"
-    );
+    imgLeftIcon.setAttribute("src", "./img/chevron-left-icon.svg");
+    imgRightIcon.setAttribute("src", "./img/chevron-right-icon.svg");
 
     if (decrease === 20) {
       aLeft.setAttribute("href", `#item${decrease}`);
@@ -118,7 +103,8 @@ const showTrending = async () => {
 
     figure.append(img);
     section.append(figure);
-    container.append(section);
+    /* container.append(section); */
+    sliderContainer.append(section);
 
     aLeft.append(imgLeftIcon);
     aRight.append(imgRightIcon);
@@ -131,8 +117,7 @@ const showTrending = async () => {
       const date = movie.release_date.split("-");
       const year = date[0];
 
-      h1.textContent =
-        `${movie.title} (${year})`.toUpperCase();
+      h1.textContent = `${movie.title} (${year})`.toUpperCase();
 
       const voteAverage = details.vote_average.toFixed(1);
       /* rating.textContent = `🔥 ${voteAverage}`; */
@@ -149,8 +134,7 @@ const showTrending = async () => {
       runtime.append(runtimeIcon, runtimeData);
 
       for (const key in details.genres) {
-        p.textContent +=
-          `# ${details.genres[key].name} `.toUpperCase();
+        p.textContent += `# ${details.genres[key].name} `.toUpperCase();
 
         overview.textContent = `${details.overview}`;
       }
@@ -168,7 +152,30 @@ const showTrending = async () => {
 
     section.append(divDetails);
     section.append(buttonWatch);
-    section.append(divHidden);
+    /* section.append(divHidden); */
+
+    /* Slider */
+    let counter = 1;
+    const imageWidth = img.clientWidth;
+
+    setInterval(() => {
+      sliderContainer.style.transform = `translateX(${
+        -imageWidth * counter
+      }px)`;
+      sliderContainer.style.transition = "transform 0.9s ease";
+
+      counter++;
+
+      console.log("width", -imageWidth * counter);
+
+      if (counter === 20) {
+        counter = 0;
+
+        setTimeout(() => {
+          sliderContainer.style.transition = "none";
+        }, 5000);
+      }
+    }, 5000);
   });
 };
 
