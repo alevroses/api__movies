@@ -343,6 +343,8 @@ body {
   /* width: 90vw; */
   display: flex;
   aspect-ratio: 16/20;
+
+  /* transition: transform 0.9s ease-in-out; */
 }
 
 .container__div {

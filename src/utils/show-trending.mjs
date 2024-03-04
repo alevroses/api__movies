@@ -1,6 +1,7 @@
 import { getTrending } from "../API/get-trending.mjs";
 import { sliderContainer } from "../nodes.mjs";
 import { getDetails } from "../API/get-details.mjs";
+import { slideNext, slidePrev } from "./slider.mjs";
 
 const showTrending = async () => {
   const data = await getTrending();
@@ -12,6 +13,9 @@ const showTrending = async () => {
   let increase = 0;
   let decrease = 21;
 
+  /* Slider */
+  /* let currentIndex = 0; */
+
   results.map((movie) => {
     const section = document.createElement("section");
 
@@ -19,9 +23,9 @@ const showTrending = async () => {
     const img = document.createElement("img");
 
     const divArrows = document.createElement("div");
-    const aLeft = document.createElement("a");
+    const aLeft = document.createElement("div");
     const imgLeftIcon = document.createElement("img");
-    const aRight = document.createElement("a");
+    const aRight = document.createElement("div");
     const imgRightIcon = document.createElement("img");
 
     const divDetails = document.createElement("div");
@@ -86,7 +90,7 @@ const showTrending = async () => {
     imgLeftIcon.setAttribute("src", "./img/chevron-left-icon.svg");
     imgRightIcon.setAttribute("src", "./img/chevron-right-icon.svg");
 
-    if (decrease === 20) {
+    /* if (decrease === 20) {
       aLeft.setAttribute("href", `#item${decrease}`);
     } else {
       aLeft.setAttribute("href", `#item${increase - 1}`);
@@ -98,7 +102,7 @@ const showTrending = async () => {
       aRight.setAttribute("href", `#item${increase + 1}`);
     } else {
       aRight.setAttribute("href", `#item${increase + 1}`);
-    }
+    } */
 
     figure.append(img);
     section.append(figure);
@@ -153,11 +157,8 @@ const showTrending = async () => {
     /* section.append(buttonWatch); */
     /* section.append(divHidden); */
 
-    /* Slider */
-    let counter = 1;
-    // const imageWidth = img.clientWidth;
-    // const imageWidth = img.naturalWidth;
-    // const imageWidth = img.width;
+    /* Slider  Forward - Backward */
+    /* let counter = 1;
     const imageWidth = img.getBoundingClientRect().width;
 
     setInterval(() => {
@@ -168,8 +169,6 @@ const showTrending = async () => {
 
       counter++;
 
-      /* console.log("width", -imageWidth * counter); */
-
       if (counter === 20) {
         counter = 0;
 
@@ -177,7 +176,45 @@ const showTrending = async () => {
           sliderContainer.style.transition = "none";
         }, 5000);
       }
-    }, 5000);
+    }, 5000); */
+
+    /* let currentIndex = 0; */
+
+    /* let counter = 1; */
+
+    /* const slideTo = (index) => {
+      const imageWidth = img.getBoundingClientRect().width;
+      const transformXValue = -imageWidth * index;
+
+      sliderContainer.style.transform = `translateX(${transformXValue}px)`;
+      sliderContainer.style.transition = "transform 0.9s ease-in-out";
+    };
+
+    const slideNext = () => {
+      currentIndex++;
+
+      if (currentIndex >= 20) {
+        currentIndex = 0;
+      }
+
+      slideTo(currentIndex);
+    };
+
+    const slidePrev = () => {
+      currentIndex--;
+
+      if (currentIndex < 0) {
+        currentIndex = 19;
+      }
+
+      slideTo(currentIndex);
+    };
+
+    aRight.addEventListener("click", slideNext);
+    aLeft.addEventListener("click", slidePrev); */
+
+    aRight.addEventListener("click", slideNext);
+    aLeft.addEventListener("click", slidePrev);
   });
 };
 
