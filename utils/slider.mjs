@@ -3,17 +3,15 @@ import { sliderContainer } from "../nodes.mjs";
 let currentIndex = 0;
 
 const slideTo = (index) => {
-  console.log(sliderContainer.getBoundingClientRect().width);
   const imageWidth = sliderContainer.getBoundingClientRect().width;
   const transformXValue = -imageWidth * index;
 
   sliderContainer.style.transform = `translateX(${transformXValue}px)`;
   sliderContainer.style.transition = "transform 0.9s ease-in-out";
 
-  if (index === (0 || 19)) {
+  if (index === 0) {
     sliderContainer.style.transition = "none";
   }
-  /* console.log(currentIndex); */
 };
 
 const slideNext = () => {
