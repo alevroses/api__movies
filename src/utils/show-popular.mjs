@@ -1,14 +1,8 @@
 import { main } from "../nodes.mjs";
 import { getDetails } from "../API/get-details.mjs";
 import { getCast } from "../API/get-cast.mjs";
-import {
-  showContent,
-  hideContent,
-} from "./show-hide-details.mjs";
-import {
-  showPageData,
-  currentPage,
-} from "./create-page-numbers.mjs";
+import { showContent, hideContent } from "./show-hide-details.mjs";
+import { showPageData, currentPage } from "./create-page-numbers.mjs";
 
 const showPopular = async () => {
   const data = await showPageData(currentPage);
@@ -23,6 +17,7 @@ const showPopular = async () => {
     const figure = document.createElement("figure");
     const img = document.createElement("img");
 
+    const divQuality = document.createElement("div");
     const quality = document.createElement("p");
 
     const divMore = document.createElement("div");
@@ -46,6 +41,7 @@ const showPopular = async () => {
     divDetails.classList.add("details-div");
     figure.classList.add("details__figure");
 
+    divQuality.classList.add("div__quality");
     quality.classList.add("details__quality");
 
     divMore.classList.add("details__more");
@@ -98,10 +94,11 @@ const showPopular = async () => {
     btnHide.textContent = "- Hide";
     btnHide.addEventListener("click", hideContent);
 
-    figure.append(img);
+    divQuality.append(quality);
+    figure.append(img, divQuality);
     rating.append(span);
     divMore.append(h3, rating, genres);
-    divDetails.append(figure, quality, divMore);
+    divDetails.append(figure, divMore);
     description.append(cast, overview, btnHide);
     section.append(divDetails, btnShow, description);
     main.append(section);
