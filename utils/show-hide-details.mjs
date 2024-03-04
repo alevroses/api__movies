@@ -6,7 +6,8 @@ const showContent = (event) => {
   cardParent.style.display = "grid";
 
   const content = cardParent.querySelector(".description");
-  content.classList.remove("disabled");
+  /* content.classList.remove("disabled"); */
+  content.classList.add("actives");
 
   const btnHideCont = cardParent.querySelector(".hide-btn");
   btnHideCont.style.display = "block";
@@ -16,15 +17,19 @@ const showContent = (event) => {
 
 const hideContent = (event) => {
   const btnHideCont = event.currentTarget;
-  const cardParent = btnHideCont.parentElement;
-  cardParent.classList.add("disabled");
+  const cardParent = btnHideCont.parentElement; /* description */
 
   const mainSection = cardParent.closest(".main__section");
-  /* mainSection.style.display = "block"; */
   mainSection.classList.remove("shadow");
 
   const btnShowCont = mainSection.querySelector(".btn-show");
-  btnShowCont.style.display = "block";
+  setTimeout(() => {
+    /* btnShowCont.style.opacity = 1; */
+    btnShowCont.style.display = "block";
+  }, 500);
+
+  /* const content = mainSection.querySelector(".description"); */
+  cardParent.classList.remove("actives");
 };
 
 export { showContent, hideContent };
