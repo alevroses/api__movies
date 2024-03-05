@@ -6,6 +6,8 @@ const leftBtn = document.querySelector(".prevPageBtn");
 const pageNumbers = document.querySelector(".pageNumbers");
 const rightBtn = document.querySelector(".nextPageBtn");
 
+const count = document.querySelector(".pagination-count span");
+
 let currentPage = 1;
 let totalPages = 5464;
 
@@ -46,6 +48,8 @@ leftBtn.addEventListener("click", () => {
   if (currentPage > 1) {
     currentPage--;
 
+    count.textContent = `Page ${currentPage} of 5485`;
+
     showPageData(currentPage);
     generatePageNumbers();
     showPopular();
@@ -55,6 +59,8 @@ leftBtn.addEventListener("click", () => {
 rightBtn.addEventListener("click", () => {
   if (totalPages > currentPage) {
     currentPage++;
+
+    count.textContent = `Page ${currentPage} of 5485`;
 
     showPageData(currentPage);
     generatePageNumbers();

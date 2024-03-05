@@ -575,11 +575,20 @@ body {
 
 .pagination {
   width: 100vw;
+  /* aspect-ratio: 1/0; */
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 15px;
-  /* border: 1px solid var(--bg-blue-10); */
+  /* flex-direction: column; */
+  flex-direction: column;
+
+  padding: 20px 15px 30px;
+  gap: 20px;
+}
+
+.pagination-container {
+  display: flex;
+  gap: 6px;
 }
 
 .load {
@@ -605,6 +614,11 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  gap: 6px;
+}
+
+.pagination-count {
+  color: var(--bg-blue-20);
 }
 
 .active {
