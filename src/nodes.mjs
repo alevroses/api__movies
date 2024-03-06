@@ -5,4 +5,6 @@ const sliderContainer = document.querySelector(".slider-container");
 const main = document.querySelector(".main");
 // Create Elements
 
-export { container, sliderContainer, main };
+const footer = document.querySelector(".footer");
+
+export { container, sliderContainer, main, footer };
