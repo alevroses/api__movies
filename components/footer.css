@@ -1,0 +1,59 @@
+:root {
+  --bg-blue-100: #020617;
+  --bg-blue-80: #0f172a;
+  --bg-blue-60: #1e293b;
+  --bg-blue-50: #334155;
+  --bg-blue-40: #475569;
+  --bg-blue-30: #64748b;
+  --bg-blue-20: #94a3b8;
+  --bg-blue-10: #cbd5e1;
+  --white: #ffffff;
+  --highlight-green: #dcf836;
+  --highlight-pink: #de2239;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  align-items: center;
+  width: 100vw;
+  max-height: 320px;
+  aspect-ratio: 16/18;
+
+  background-image: url("../img/ft-bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  color: var(--bg-blue-10);
+  padding: 15px;
+}
+
+.footer-figure {
+  width: 140px;
+  height: 40px;
+  align-self: start;
+}
+
+.figure-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.footer-info {
+  text-align: center;
+}
+
+.footer-line {
+  width: 100%;
+  border: 1px solid var(--bg-blue-30);
+}
+
+.footer-backtotop {
+  font-size: 19px;
+  align-self: flex-end;
+  color: var(--highlight-green);
+}

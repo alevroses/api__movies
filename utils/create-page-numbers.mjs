@@ -30,6 +30,7 @@ const generatePageNumbers = () => {
 
     if (currentPage === i) {
       pageNumber.classList.add("active");
+      count.textContent = `Page ${currentPage} of 5485`;
     }
 
     pageNumber.addEventListener("click", () => {
