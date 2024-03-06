@@ -21,6 +21,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100vw;
   height: auto;
@@ -628,3 +632,12 @@ body {
   color: var(--highlight-green);
   border: 2px solid var(--highlight-green);
 }
+
+/* Footer------------------- */
+
+/* .footer-backtotop {
+  font-size: 19px;
+  align-self: flex-end;
+  color: var(--highlight-green);
+  cursor: pointer;
+} */
