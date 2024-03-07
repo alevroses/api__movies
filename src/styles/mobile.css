@@ -304,28 +304,34 @@ body {
 .categories {
   width: 100%;
   opacity: 0;
-  height: 0;
+  min-height: 0;
   overflow: hidden;
-  transition: opacity 0.9s ease, height 0.5s ease;
+  transition: opacity 0.5s ease, min-height 0.5s ease;
 
-  background-color: var(--bg-blue-20);
+  background-color: var(--bg-blue-100);
   z-index: 1;
 }
 
 .categories-active {
-  height: 320px;
+  min-height: 320px;
+  aspect-ratio: 1/1.18;
+  /* min-height: 380px; */
   opacity: 1;
+  border-bottom: 1px solid var(--bg-blue-80);
 }
 
 .categories ul {
+  aspect-ratio: 1/1.18;
+  min-height: 380px;
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .categories ul li {
   width: 120px;
+  height: 36px;
   list-style: none;
   padding: 5px;
   font-weight: 600;
@@ -333,7 +339,7 @@ body {
 
 .categories ul li a {
   text-decoration: none;
-  color: var(--bg-blue-100);
+  color: var(--bg-blue-10);
 
   cursor: pointer;
 }
