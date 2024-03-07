@@ -17,6 +17,8 @@ import { getSearchTv } from "./API/get-search-tv.mjs";
 import { showSearchTv } from "./utils/show-search-tv.mjs";
 import { showHidenLogin } from "./utils/show-hide-login.mjs";
 import { showMoviesGenres } from "./utils/show-movies-genres.mjs";
+import { top } from "./components/back-to-top.mjs";
+import { showFooter } from "./components/footer.mjs";
 
 /* Constantes ------- */
 
@@ -28,4 +30,6 @@ showHidenLogin();
 
 /* Test  */
 
+showFooter();
+top();
 showMoviesGenres();
