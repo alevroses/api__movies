@@ -1,0 +1,70 @@
+/* 640px - 740*/
+
+:root {
+  --bg-blue-100: #020617;
+  --bg-blue-80: #0f172a;
+  --bg-blue-60: #1e293b;
+  --bg-blue-50: #334155;
+  --bg-blue-40: #475569;
+  --bg-blue-30: #64748b;
+  --bg-blue-20: #94a3b8;
+  --bg-blue-10: #cbd5e1;
+  --white: #ffffff;
+  --highlight-green: #dcf836;
+  --highlight-pink: #de2239;
+}
+
+.main {
+  width: 90vw;
+  /* grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr; */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(260px, 100%), 1fr)
+  );
+  margin: 0 auto;
+
+  gap: 30px;
+  /* column-gap: 40px; */
+}
+
+.main__section {
+  aspect-ratio: 4/6;
+  /* width: 0; */
+  /* width: 269px; */
+  /* width: 100%; */
+  max-width: none;
+
+  /* border-radius: 2px; */
+  /* border: 2px solid transparent; */
+  /* box-shadow: 0 0 10px var(--bg-blue-20), 0 0 20px var(--bg-blue-60) inset; */
+  /* box-shadow: 4px 4px 4px 4px var(--bg-blue-10); */
+  filter: drop-shadow(0px 0px 3px var(--bg-blue-10));
+}
+
+/* .main__section::before {
+  background-color: rgba(255, 255, 255, 0.5);
+} */
+
+.main .details-div {
+  /* display: block; */
+  width: 100%;
+  grid-template-columns: none;
+}
+
+.details__figure img {
+  width: 100%;
+  height: 100%;
+}
+
+.details__more {
+  display: none;
+}
+
+.button-description {
+  display: none;
+}
+
+.description.disabled {
+  display: none;
+}
