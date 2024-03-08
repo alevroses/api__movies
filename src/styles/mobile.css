@@ -392,6 +392,7 @@ body {
   background-color: var(--bg-blue-80);
   opacity: 0.9;
   border-radius: 4px;
+  z-index: 1;
 }
 
 .details {

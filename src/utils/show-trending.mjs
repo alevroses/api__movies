@@ -82,27 +82,18 @@ const showTrending = async () => {
 
     divHidden.classList.add("hidden");
 
-    img.setAttribute(
+    /* img.setAttribute(
+      "src",
+      `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`
+    ); */
+
+    /* img.setAttribute(
       "src",
       `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-    );
+    ); */
 
     imgLeftIcon.setAttribute("src", "./img/chevron-left-icon.svg");
     imgRightIcon.setAttribute("src", "./img/chevron-right-icon.svg");
-
-    /* if (decrease === 20) {
-      aLeft.setAttribute("href", `#item${decrease}`);
-    } else {
-      aLeft.setAttribute("href", `#item${increase - 1}`);
-    }
-
-    if (increase === 20) {
-      increase = 0;
-
-      aRight.setAttribute("href", `#item${increase + 1}`);
-    } else {
-      aRight.setAttribute("href", `#item${increase + 1}`);
-    } */
 
     figure.append(img);
     section.append(figure);
@@ -113,6 +104,18 @@ const showTrending = async () => {
     aRight.append(imgRightIcon);
     divArrows.append(aLeft, aRight);
     section.append(divArrows);
+
+    if (section.getBoundingClientRect().width < 486) {
+      img.setAttribute(
+        "src",
+        `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+      );
+    } else {
+      img.setAttribute(
+        "src",
+        `https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`
+      );
+    }
 
     (async () => {
       const details = await getDetails(movie.id);
@@ -156,62 +159,6 @@ const showTrending = async () => {
     section.append(divDetails);
     /* section.append(buttonWatch); */
     /* section.append(divHidden); */
-
-    /* Slider  Forward - Backward */
-    /* let counter = 1;
-    const imageWidth = img.getBoundingClientRect().width;
-
-    setInterval(() => {
-      sliderContainer.style.transform = `translateX(${
-        -imageWidth * counter
-      }px)`;
-      sliderContainer.style.transition = "transform 0.9s ease";
-
-      counter++;
-
-      if (counter === 20) {
-        counter = 0;
-
-        setTimeout(() => {
-          sliderContainer.style.transition = "none";
-        }, 5000);
-      }
-    }, 5000); */
-
-    /* let currentIndex = 0; */
-
-    /* let counter = 1; */
-
-    /* const slideTo = (index) => {
-      const imageWidth = img.getBoundingClientRect().width;
-      const transformXValue = -imageWidth * index;
-
-      sliderContainer.style.transform = `translateX(${transformXValue}px)`;
-      sliderContainer.style.transition = "transform 0.9s ease-in-out";
-    };
-
-    const slideNext = () => {
-      currentIndex++;
-
-      if (currentIndex >= 20) {
-        currentIndex = 0;
-      }
-
-      slideTo(currentIndex);
-    };
-
-    const slidePrev = () => {
-      currentIndex--;
-
-      if (currentIndex < 0) {
-        currentIndex = 19;
-      }
-
-      slideTo(currentIndex);
-    };
-
-    aRight.addEventListener("click", slideNext);
-    aLeft.addEventListener("click", slidePrev); */
 
     aRight.addEventListener("click", slideNext);
     aLeft.addEventListener("click", slidePrev);

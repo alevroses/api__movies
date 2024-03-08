@@ -1,1 +1,18 @@
-/* 540px */
+/* 540px to 766px */
+
+/* .container {
+  width: 90vw;
+} */
+
+.section-menu {
+  justify-content: center;
+  gap: 2%;
+}
+
+.slider-container {
+  aspect-ratio: 16/9;
+}
+
+.banner {
+  width: 100%;
+}
