@@ -59,7 +59,11 @@ const showPopular = async () => {
 
     quality.textContent = "FHD";
     h3.textContent = movie.title;
-    rating.textContent = `Rating: `;
+
+    window.innerWidth < 640
+    ? rating.textContent = `Rating: `
+    : rating.textContent = `⭐ `
+
     genres.textContent = "Genres: ";
 
     const votes = movie.vote_average.toFixed(1);
