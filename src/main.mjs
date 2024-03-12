@@ -19,6 +19,7 @@ import { showHidenLogin } from "./utils/show-hide-login.mjs";
 import { showMoviesGenres } from "./utils/show-movies-genres.mjs";
 import { top } from "./components/back-to-top.mjs";
 import { showFooter } from "./components/footer.mjs";
+import { changeLogin } from "./utils/change-login.mjs";
 
 /* Constantes ------- */
 
@@ -28,8 +29,10 @@ showPopular();
 generatePageNumbers();
 showHidenLogin();
 
-/* Test  */
-
 showFooter();
 top();
 showMoviesGenres();
+
+/* Test  */
+
+changeLogin();
