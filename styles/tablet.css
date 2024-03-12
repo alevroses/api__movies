@@ -1,8 +1,16 @@
 /* 540px to 766px */
 
-/* .container {
-  width: 90vw;
-} */
+body {
+  width: 100%;
+}
+
+.header,
+.banner,
+.main,
+.pagination,
+body .footer {
+  width: 100%;
+}
 
 .section-menu {
   justify-content: center;
@@ -11,8 +19,4 @@
 
 .slider-container {
   aspect-ratio: 16/9;
-}
-
-.banner {
-  width: 100%;
 }
