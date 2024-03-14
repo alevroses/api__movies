@@ -20,3 +20,23 @@ body .footer {
 .slider-container {
   aspect-ratio: 16/9;
 }
+
+/* Categories */
+
+.categories {
+  aspect-ratio: 4/2;
+}
+
+.categories .category-list {
+  aspect-ratio: 4/2.2;
+}
+
+.categories-active {
+  /* min-height: 268px; */
+  min-height: 290px;
+  aspect-ratio: 4/2.2;
+}
+
+.categories ul {
+  align-content: space-around;
+}

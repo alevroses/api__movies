@@ -45,6 +45,7 @@ const showTrending = async () => {
     const p = document.createElement("p");
     const overview = document.createElement("p");
     const buttonWatch = document.createElement("button");
+    const trailer = document.createElement("a");
 
     const divHidden = document.createElement("div");
 
@@ -79,6 +80,7 @@ const showTrending = async () => {
     p.classList.add("details__genre");
     overview.classList.add("details__overview");
     buttonWatch.classList.add("watch");
+    trailer.classList.add("trailer");
 
     divHidden.classList.add("hidden");
 
@@ -147,6 +149,7 @@ const showTrending = async () => {
     })();
 
     buttonWatch.textContent = "Watch now";
+    trailer.textContent = "Trailer";
 
     divDetails.append(h1);
     divDetailsOthers.append(rating);
@@ -155,6 +158,10 @@ const showTrending = async () => {
     divDetails.append(divDetailsOthers);
     divDetails.append(p);
     divDetails.append(overview, buttonWatch);
+
+    if (window.innerWidth >= 994) {
+      divDetails.append(trailer);
+    }
 
     section.append(divDetails);
     /* section.append(buttonWatch); */
