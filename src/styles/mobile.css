@@ -286,12 +286,15 @@ body {
   text-decoration: none;
   color: var(--bg-blue-10);
   font-size: 14px;
+
+  /* cursor: pointer; */
 }
 
 .dropdowm {
   display: flex;
   align-items: center;
   gap: 4px;
+  cursor: pointer;
 }
 
 .dropdowm__icon {
@@ -315,6 +318,7 @@ body {
 .categories-active {
   z-index: 1;
   min-height: 380px;
+  /* max-height: 400px; */
   aspect-ratio: 1/1.18;
   opacity: 1;
   border-bottom: 1px solid var(--bg-blue-80);
@@ -393,6 +397,7 @@ body {
   opacity: 0.9;
   border-radius: 4px;
   z-index: 1;
+  cursor: pointer;
 }
 
 .details {
