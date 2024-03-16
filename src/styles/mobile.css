@@ -496,6 +496,7 @@ body {
 
 .filters {
   width: 90vw;
+  max-width: 1160px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;

@@ -40,3 +40,21 @@ body .footer {
 .categories ul {
   align-content: space-around;
 }
+
+/* Test--- */
+.main h2 {
+  font-size: 36px;
+}
+
+.filters {
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 60px;
+}
+
+.filters > * {
+  max-width: 284px;
+}
+
+.search-btn {
+  bottom: -54px;
+}
