@@ -212,34 +212,36 @@
     </section>
 
     <main class="main">
-      <!-- <section class="main__section">
-        <div class="details-div">
-          <figure class="details__figure">
-            <img src="./img/movie-banner.jpg" alt="" />
-          </figure>
-          <p class="details__quality">FHD</p>
-          <div class="details__more">
-            <h3>Movie name</h3>
-            <p>Rating: <span>5.5</span></p>
-            <p>Genres: <span>Drama, Action</span></p>
-          </div>
-        </div>
-        <button class="button-description btn-show">+ Description</button>
-        <section class="description disabled">
-          <p class="description__cast">
-            <span>Cast: </span>Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Quisquam tempora molestias, est error perspiciatis
-            eveniet.
-          </p>
-          <p class="description__overview">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
-            blanditiis fuga nemo sapiente quod quia voluptates eos doloribus
-            placeat, consequatur praesentium inventore perferendis delectus
-            eius, laborum.
-          </p>
-          <button class="button-description hide-btn">- Hide</button>
-        </section>
-      </section> -->
+      <h2>MOVIES FILTER</h2>
+
+      <div class="filters">
+        <!-- <label for="genres">Genres</label> -->
+        <select name="" class="genres" id="genres">
+          <option value="">Select Genres</option>
+        </select>
+
+        <!-- <label for="year">year</label> -->
+        <select name="" class="year" id="year">
+          <option value="">Select Year</option>
+        </select>
+
+        <!-- <label for="rating">Select Rating</label> -->
+        <select name="" class="rating" id="rating">
+          <option value="">Select Rating</option>
+        </select>
+
+        <!-- <label for="sort">Sort</label> -->
+        <select name="" class="sort" id="sort">
+          <option value="">Sort</option>
+          <option value="popularity.desc">Newest First</option>
+          <option value="popularity.asc">Oldest First</option>
+        </select>
+
+        <button class="search-btn">SUBMIT</button>
+      </div>
+      <section class="main__container">
+        <!-- Content -->
+      </section>
     </main>
 
     <section class="pagination">

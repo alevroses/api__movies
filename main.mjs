@@ -20,6 +20,8 @@ import { showMoviesGenres } from "./utils/show-movies-genres.mjs";
 import { top } from "./components/back-to-top.mjs";
 import { showFooter } from "./components/footer.mjs";
 import { changeLogin } from "./utils/change-login.mjs";
+import { createFilters } from "./utils/createFilters.mjs";
+import { getDiscoverMovie } from "./API/get-discover-movie.mjs";
 
 /* Constantes ------- */
 
@@ -33,6 +35,8 @@ showFooter();
 top();
 showMoviesGenres();
 
-/* Test  */
-
 changeLogin();
+createFilters();
+
+/* Test  */
+/* getDiscoverMovie(); */
