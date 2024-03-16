@@ -8,7 +8,9 @@ const showPopular = async () => {
   const data = await showPageData(currentPage);
   /* console.log(data); */
 
-  main.innerHTML = "";
+  const mainContainer = document.querySelector(".main__container");
+  /* main.innerHTML = ""; */
+  mainContainer.innerHTML = "";
 
   data.results.map((movie) => {
     const section = document.createElement("section");
@@ -61,8 +63,8 @@ const showPopular = async () => {
     h3.textContent = movie.title;
 
     window.innerWidth < 640
-    ? rating.textContent = `Rating: `
-    : rating.textContent = `⭐ `
+      ? (rating.textContent = `Rating: `)
+      : (rating.textContent = `⭐ `);
 
     genres.textContent = "Genres: ";
 
@@ -105,7 +107,9 @@ const showPopular = async () => {
     divDetails.append(figure, divMore);
     description.append(cast, overview, btnHide);
     section.append(divDetails, btnShow, description);
-    main.append(section);
+
+    mainContainer.append(section);
+    /* main.append(section); */
   });
 };
 
