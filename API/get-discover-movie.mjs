@@ -29,7 +29,6 @@ const getDiscoverMovie = async (
 
   const data = await response.json();
 
-  console.log("get discover", data);
   return data;
 };
 

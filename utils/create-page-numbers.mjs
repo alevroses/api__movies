@@ -77,7 +77,7 @@ const showPageData = async (page) => {
   const selectRating = document.querySelector(".rating").value;
   const selectSort = document.querySelector(".sort").value;
 
-  console.log(page, selectGenres, selectYear, selectRating, selectSort);
+  /* console.log(page, selectGenres, selectYear, selectRating, selectSort); */
 
   const data = await getDiscoverMovie(
     page,
