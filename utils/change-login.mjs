@@ -9,7 +9,16 @@ const changeLogin = () => {
   if (window.innerWidth > 739) {
     /* login.innerHTML = loginBtn.outerHTML; */
     login.innerHTML = "";
-    loginBtn.setAttribute("href", "./navigation/login.html");
+
+    const locationHref = location.href.split("/");
+
+    locationHref[locationHref.length - 1] === "index.html"
+      ? loginBtn.setAttribute("href", "./navigation/login.html")
+      : loginBtn.setAttribute("href", "./login.html");
+
+    /* console.log(locationHref[locationHref.length - 1]); */
+
+    /* loginBtn.setAttribute("href", "./navigation/login.html"); */
     /* loginBtn.href = "./navigation/login.html"; */
 
     login.append(loginBtn, signupBtn);
