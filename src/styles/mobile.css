@@ -235,6 +235,11 @@ body {
   object-fit: fill;
 }
 
+/* .section__icon--search,
+.section__icon--login {
+  cursor: pointer;
+} */
+
 /* Login -----------------------  */
 
 .login {
