@@ -12,7 +12,8 @@ const changeLogin = () => {
 
     const locationHref = location.href.split("/");
 
-    locationHref[locationHref.length - 1] === "index.html"
+    locationHref[locationHref.length - 1] === "index.html" ||
+    locationHref[locationHref.length - 2] === "api__movies"
       ? loginBtn.setAttribute("href", "./navigation/login.html")
       : loginBtn.setAttribute("href", "./login.html");
 
