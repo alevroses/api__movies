@@ -6,7 +6,10 @@ const showFooter = () => {
     const linkOne = "./components/footer.html";
     const linkTwo = "../components/footer.html";
 
-    if (locationHref[locationHref.length - 1] === "index.html") {
+    if (
+      locationHref[locationHref.length - 1] === "index.html" ||
+      locationHref[locationHref.length - 2] === "api__movies"
+    ) {
       fetch(linkOne)
         .then((response) => response.text())
         .then((html) => (footerContainer.innerHTML = html));
