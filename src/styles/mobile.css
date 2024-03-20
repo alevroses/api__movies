@@ -99,6 +99,10 @@ body {
   color: var(--highlight-green);
 }
 
+.section__links .section__link--shows:hover {
+  color: var(--highlight-green);
+}
+
 /* Search ----------------------------- */
 
 .search {
@@ -718,6 +722,8 @@ body {
   border: 1px solid var(--bg-blue-10);
   color: var(--bg-blue-10);
   background-color: var(--bg-blue-100);
+
+  cursor: pointer;
 }
 
 .prevPageBtn,
