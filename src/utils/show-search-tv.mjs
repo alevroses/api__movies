@@ -62,14 +62,17 @@ input.addEventListener("input", () => {
   if (
     title.length > 1 &&
     (location.href.endsWith("api__movies/") ||
-      location.href.endsWith("index.html") ||
-      location.href.endsWith(`#item${number}`))
+      location.href.endsWith("index.html"))
   ) {
     showSearchTv({
       name: title,
       star: "./img/star-icon.svg",
     });
-  } else if (title.length > 1 && location.href.endsWith("login.html")) {
+  } else if (
+    title.length > 1 &&
+    (location.href.endsWith("login.html") ||
+      location.href.endsWith("shows.html"))
+  ) {
     /* disabled.style.display = "grid"; */
 
     showSearchTv({
