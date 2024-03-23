@@ -78,8 +78,7 @@ input.addEventListener("input", () => {
   if (
     filmName.length > 1 &&
     (location.href.endsWith("api__movies/") ||
-      location.href.endsWith("index.html") ||
-      location.href.endsWith(`#item${number}`))
+      location.href.endsWith("index.html"))
   ) {
     disabled.style.display = "grid";
 
@@ -89,7 +88,8 @@ input.addEventListener("input", () => {
     });
   } else if (
     filmName.length > 1 &&
-    location.href.endsWith("login.html")
+    (location.href.endsWith("login.html") ||
+      location.href.endsWith("shows.html"))
   ) {
     disabled.style.display = "grid";
     /* console.log("testing...."); */
