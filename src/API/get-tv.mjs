@@ -8,14 +8,13 @@ const options = {
   },
 };
 
-const getTv = async () => {
+const getTv = async (page = 1) => {
   const response = await fetch(
-    "https://api.themoviedb.org/3/trending/tv/day?page=1",
+    `https://api.themoviedb.org/3/trending/tv/day?page=${page}`,
     options
   );
 
   const data = await response.json();
-  console.log(data);
   return data;
 };
 

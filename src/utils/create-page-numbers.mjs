@@ -12,6 +12,8 @@ const count = document.querySelector(".pagination-count span");
 let currentPage = 1;
 let totalPages = 5464;
 
+/* const tvShows = location.href.split("/"); */
+
 /* const showPageData = async (page) => {
   const data = await getPopular(page);
   return data;
@@ -86,8 +88,15 @@ const showPageData = async (page) => {
     selectRating,
     selectSort
   );
+
   return data;
 };
+
+/* const showPageTv = async (page) => {
+  const data = await getTv(page);
+
+  return data;
+}; */
 
 const generatePageNumbers = () => {
   pageNumbers.innerHTML = "";
@@ -111,6 +120,12 @@ const generatePageNumbers = () => {
       showPageData(currentPage);
       generatePageNumbers();
       showPopular();
+
+      /* if (tvShows[tvShows.length - 1] === "shows.html") {
+        showPageTv(currentPage);
+
+        console.log(tvShows[tvShows.length - 1]);
+      } */
     });
 
     pageNumbers.append(pageNumber);
@@ -126,6 +141,12 @@ leftBtn.addEventListener("click", () => {
     showPageData(currentPage);
     generatePageNumbers();
     showPopular();
+
+    /* if (tvShows[tvShows.length - 1] === "shows.html") {
+      showPageTv(currentPage);
+
+      console.log(tvShows[tvShows.length - 1]);
+    } */
   }
 });
 
@@ -138,6 +159,12 @@ rightBtn.addEventListener("click", () => {
     showPageData(currentPage);
     generatePageNumbers();
     showPopular();
+
+    /* if (tvShows[tvShows.length - 1] === "shows.html") {
+      showPageTv(currentPage);
+
+      console.log(tvShows[tvShows.length - 1]);
+    } */
   }
 });
 

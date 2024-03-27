@@ -2,6 +2,8 @@ import { getTv } from "../API/get-tv.mjs";
 import { top } from "../components/back-to-top.mjs";
 import { showFooter } from "../components/footer.mjs";
 import { changeLogin } from "../utils/change-login.mjs";
+import { generatePageTv } from "../utils/create-page-tv.mjs";
+
 import { showHidenLogin } from "../utils/show-hide-login.mjs";
 import { showMoviesGenres } from "../utils/show-movies-genres.mjs";
 import { input, showSearchMovie } from "../utils/show-search-movie.mjs";
@@ -15,8 +17,11 @@ showHidenLogin();
 showMoviesGenres();
 changeLogin();
 
-/* showFooter();
-top(); */
+showFooter();
+top();
 
 getTv();
 showTv();
+
+generatePageTv();
+/* generatePageNumbers(); */
